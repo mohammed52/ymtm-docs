@@ -6,10 +6,10 @@ import flash from 'express-flash';
 import methodOverride from 'method-override';
 import gzip from 'compression';
 import helmet from 'helmet';
-import unsupportedMessage from '../db/unsupportedMessage';
+// import unsupportedMessage from '../db/unsupportedMessage';
 import { sessionSecret } from '../../config/secrets';
 import { DB_TYPE, ENV } from '../../config/env';
-import { session as dbSession } from '../db';
+// import { session as dbSession } from '../db';
 
 export default (app) => {
   app.set('port', (process.env.PORT || 5000));
@@ -52,11 +52,11 @@ export default (app) => {
   //                  However, it requires an https-enabled website, i.e., HTTPS is necessary for secure cookies.
   //                  If secure is set, and you access your site over HTTP, the cookie will not be set.
   let sessionStore = null;
-  if (!dbSession) {
-    console.warn(unsupportedMessage('session'));
-  } else {
-    sessionStore = dbSession();
-  }
+  // if (!dbSession) {
+  //   console.warn(unsupportedMessage('session'));
+  // } else {
+  //   sessionStore = dbSession();
+  // }
 
   const sess = {
     resave: false,
@@ -86,10 +86,10 @@ export default (app) => {
   console.log('--------------------------');
 
 
-  app.use(session(sess));
+  // app.use(session(sess));
 
-  app.use(passport.initialize());
-  app.use(passport.session());
+  // app.use(passport.initialize());
+  // app.use(passport.session());
 
   app.use(flash());
 };
