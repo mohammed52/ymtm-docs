@@ -1,0 +1,5 @@
+show how many savings plugin: https://www.iquotexpress.com/
+--
+will need to create a quote class for each particular quote entry
+maybe a subclass for entry type e.g image selection or input box
+--
