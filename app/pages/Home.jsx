@@ -12,14 +12,14 @@ class Home extends Component {
   }
 
   pageTitle = () => {
-    return 'Home | reactGo';
+    return 'YMTM | Documents';
   };
 
   pageMeta = () => {
     return [
       {
         name: 'description',
-        content: 'A reactGo example of a voting page'
+        content: 'generate a list of application documents required by YMTM'
       }
     ];
   };
@@ -33,7 +33,7 @@ class Home extends Component {
       <Page {...this.getMetaData()}>
         <HomeContainer {...this.props} />
       </Page>
-      );
+    );
   }
 }
 

@@ -1,23 +1,30 @@
 @import 'testStyles';
 
-.homeWrapper{
-  margin: 0 5vw 0 5vw;
+.homeWrapper {
+	margin: 0 5vw 0 5vw;
 }
 
 .pageTitle {
-  text-align: center;
+	text-align: center;
 }
 
-.pageSubTitle{
-  text-align: center;
-}    
-
-@media(max-width : 480px){
-  .pageTitle {
-    font-size: 8vw;
-  }
-
-  .pageSubTitle{
-    font-size: 6vw;
+.pageSubTitle {
+	text-align: center;
 }
+
+.optionsWrapper {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+}
+
+@media(max-width:480px) {
+	.pageTitle {
+		font-size: 8vw;
+	}
+
+	.pageSubTitle {
+		font-size: 6vw;
+	}
+
 }

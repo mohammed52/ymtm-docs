@@ -11,7 +11,7 @@ import { optionIsSelectedInCategory } from './helpers/categoryHelpers'
 // const cx = classNames.bind(styles);
 
 class ImageCategoryComponent extends Component {
-  p
+
   constructor(props) {
     super(props);
     this.saveSelectedOptionInStore = this.saveSelectedOptionInStore.bind(this);
@@ -67,7 +67,7 @@ class ImageCategoryComponent extends Component {
         </div>
       </div>
 
-      );
+    );
   }
 }
 
