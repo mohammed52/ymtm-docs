@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 // import Navigation from '../containers/Navigation';
 // import Message from '../containers/Message';
 import styles from '../css/main';
-import MEK from '../images/MEK.png';
+import ymtm from '../images/ymtm.png';
 import favicon from '../images/favicon.png';
 // import MEK from '../images/MEK.png';
 
@@ -66,21 +66,17 @@ class App extends Component {
       <div>
         {!this.state.cssHasLoaded ? <div/> :
          <div className={styles.mainWrapper}>
-           <Navbar>
-             <Navbar.Header>
-               <Navbar.Brand>
-                 <a href="#"><img src={MEK}
-                                  width="90"
-                                  height="20" /></a>
-               </Navbar.Brand>
-             </Navbar.Header>
-             <Nav pullRight>
-               <NavItem eventKey={1}
-                        disabled>
-                 <strong>Helpline: 021-34530931</strong>
-               </NavItem>
-             </Nav>
-           </Navbar>
+         <div className={styles.headerWrapper2}>
+           
+           <div className={styles.headerWrapper}>
+             <img src={ymtm}
+                  width="90"
+                  height="90"
+                  className="img-fluid" />
+             <strong>Helpline: 0313-7590210</strong>
+           </div>
+         </div>
+           <br/>
            {this.props.children}
          </div>}
       </div>

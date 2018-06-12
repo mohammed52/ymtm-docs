@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import classNames from 'classnames/bind';
 import CategoryWrapperContainer from './CategoryWrapperContainer'
 import styles from '../css/components/homeStyles';
+import ymtm from '../images/ymtm.png';
 // import { defaultSettings } from './defaultSettings'
 
 var ReactBootstrap = require('react-bootstrap');
