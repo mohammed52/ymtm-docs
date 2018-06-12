@@ -67,68 +67,68 @@ class Home extends Component {
 
     return (
       <div className={[styles.homeWrapper].join(' ')}>
-        <div className={["container-fluid"].join(' ')}>
-          <div className={[styles.optionsWrapper].join(' ')}>
-            <form action="">
-              <div className="well">
-                <FormGroup>
-                  <ControlLabel>
-                    Select Purpose
-                  </ControlLabel>
-                  <br/>
-                  <Radio inline
-                         name="purposeOption"
-                         onChange={this.handlePurposeOptionChange}
-                         value={defaultSettings.purpose.existingBusiness}
-                         checked={this.state.selectedPurpose === defaultSettings.purpose.existingBusiness}>
-                    For Existing Business
-                  </Radio>
-                  <Radio inline
-                         name="purposeOption"
-                         onChange={this.handlePurposeOptionChange}
-                         value={defaultSettings.purpose.newBusiness}
-                         checked={this.state.selectedPurpose === defaultSettings.purpose.newBusiness}>
-                    New Business
-                  </Radio>
-                </FormGroup>
-              </div>
-              <div className="well">
-                <FormGroup>
-                  <ControlLabel>
-                    Enter Amount
-                  </ControlLabel>
-                  <FormControl type="text"
-                               defaultValue={1000000}
-                               id="id-amount" />
-                </FormGroup>
-              </div>
-              <div className="well">
-                <FormGroup>
-                  <ControlLabel>
-                    Source of Income
-                  </ControlLabel>
-                  <Radio inline
-                         name="incomeSourceOption"
-                         onChange={this.handleincomeSourceOptionChange}
-                         value={defaultSettings.sourceOfIncome.businessSoleProprietorship}
-                         checked={this.state.selectedIncomeSource === defaultSettings.sourceOfIncome.businessSoleProprietorship}>
-                    Business (Sole Proprietor)
-                  </Radio>
-                  <Radio inline
-                         name="incomeSourceOption"
-                         onChange={this.handleincomeSourceOptionChange}
-                         value={defaultSettings.sourceOfIncome.businessPartnership}
-                         checked={this.state.selectedIncomeSource === defaultSettings.sourceOfIncome.businessPartnership}>
-                    Business (Partnership)
-                  </Radio>
-                </FormGroup>
-              </div>
-            </form>
+        <h3 className={[styles.titleText].join(' ')}>Get the List of Documents required for your Qardan Hasana Application:</h3>
+        <div className={[styles.optionsWrapper].join(' ')}>
+          <div className={[styles.optionCategory, "well"].join(' ')}>
+            <FormGroup>
+              <ControlLabel>
+                Select Purpose
+              </ControlLabel>
+              <br/>
+              <Radio inline
+                     name="purposeOption"
+                     onChange={this.handlePurposeOptionChange}
+                     value={defaultSettings.purpose.existingBusiness}
+                     checked={this.state.selectedPurpose === defaultSettings.purpose.existingBusiness}>
+                For Existing Business
+              </Radio>
+              <br/>
+              <Radio inline
+                     name="purposeOption"
+                     onChange={this.handlePurposeOptionChange}
+                     value={defaultSettings.purpose.newBusiness}
+                     checked={this.state.selectedPurpose === defaultSettings.purpose.newBusiness}>
+                New Business
+              </Radio>
+            </FormGroup>
           </div>
-          <h2 className={[styles.pageTitle].join(' ')}>Get INSTANT quotes for Metal Doors!</h2>
-          <h3 className={[styles.pageSubTitle].join(' ')}>Select a Door Type</h3>
-          <CategoryWrapperContainer />
+          <div className={[styles.optionCategory, "well"].join(' ')}>
+            <FormGroup>
+              <ControlLabel>
+                Enter Amount
+              </ControlLabel>
+              <FormControl type="text"
+                           defaultValue={1000000}
+                           id="id-amount" />
+            </FormGroup>
+          </div>
+          <div className={[styles.optionCategory, "well"].join(' ')}>
+            <FormGroup>
+              <ControlLabel>
+                Source of Income
+              </ControlLabel>
+              <br/>
+              <Radio inline
+                     name="incomeSourceOption"
+                     onChange={this.handleincomeSourceOptionChange}
+                     value={defaultSettings.sourceOfIncome.businessSoleProprietorship}
+                     checked={this.state.selectedIncomeSource === defaultSettings.sourceOfIncome.businessSoleProprietorship}>
+                Business (Sole Proprietor)
+              </Radio>
+              <br/>
+              <Radio inline
+                     name="incomeSourceOption"
+                     onChange={this.handleincomeSourceOptionChange}
+                     value={defaultSettings.sourceOfIncome.businessPartnership}
+                     checked={this.state.selectedIncomeSource === defaultSettings.sourceOfIncome.businessPartnership}>
+                Business (Partnership)
+              </Radio>
+            </FormGroup>
+          </div>
         </div>
+        <h2 className={[styles.pageTitle].join(' ')}>Get INSTANT quotes for Metal Doors!</h2>
+        <h3 className={[styles.pageSubTitle].join(' ')}>Select a Door Type</h3>
+        <CategoryWrapperContainer />
       </div>
     );
   }

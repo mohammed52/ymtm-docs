@@ -15,12 +15,25 @@
 .optionsWrapper {
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: space-around;
+	justify-content: space-between;
+	border: 1px solid red;
+}
+
+.optionCategory {
+	width: 250px;
+}
+
+.titleText {
+	font-size: 4vw;
 }
 
 @media(max-width:480px) {
 	.pageTitle {
 		font-size: 8vw;
+	}
+
+	.titleText {
+		font-size: 6vw;
 	}
 
 	.pageSubTitle {
