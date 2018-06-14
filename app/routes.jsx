@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 import { fetchVoteData } from './fetch-data';
-import { App, Home, Dashboard, About, LoginOrRegister } from './pages';
+import { App, Home, Dashboard, About, LoginOrRegister, ShowDocsPage } from './pages';
 
 /*
  * @param {Redux Store}
@@ -36,6 +36,8 @@ export default (store) => {
            component={App}>
       <IndexRoute component={Home}
                   fetchData={fetchVoteData} />
+      <Route path="/showdocs"
+             component={ShowDocsPage} />
     </Route>
   );
 };

@@ -5,6 +5,7 @@ import classNames from 'classnames/bind';
 import CategoryWrapperContainer from './CategoryWrapperContainer'
 import styles from '../css/components/homeStyles';
 import ymtm from '../images/ymtm.png';
+import { browserHistory } from 'react-router';
 // import { defaultSettings } from './defaultSettings'
 
 var ReactBootstrap = require('react-bootstrap');
@@ -42,8 +43,13 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.handlePurposeOptionChange = this.handlePurposeOptionChange.bind(this);
+    this.handleincomeSourceOptionChange = this.handleincomeSourceOptionChange.bind(this);
+    this.btnClickGetDocList = this.btnClickGetDocList.bind(this);
+    this.onAmountChange = this.onAmountChange.bind(this);
     this.state = {
-      selectedPurpose: defaultSettings.purpose.existingBusiness
+      selectedPurpose: defaultSettings.purpose.existingBusiness,
+      selectedIncomeSource: defaultSettings.sourceOfIncome.businessSoleProprietorship,
+      amount: defaultSettings.amount
     }
   }
 
@@ -61,6 +67,34 @@ class Home extends Component {
     });
   }
 
+  handleincomeSourceOptionChange(changeEvent) {
+    this.setState({
+      selectedIncomeSource: changeEvent.target.value
+    })
+  }
+
+  btnClickGetDocList() {
+    console.log("btnClickGetDocList");
+    const applicationDetails = {
+      purpose: this.state.selectedPurpose,
+      amount: this.state.amount,
+      incomeSource: this.state.selectedIncomeSource
+    }
+    console.log("applicationDetails", applicationDetails);
+    browserHistory.push({
+      pathname: '/showdocs',
+      state: {
+        applicationDetails
+      }
+    });
+  }
+
+  onAmountChange(event) {
+    this.setState({
+      amount: event.target.value
+    })
+  }
+
 
 
   render() {
@@ -68,67 +102,72 @@ class Home extends Component {
     return (
       <div className={[styles.homeWrapper].join(' ')}>
         <h3 className={[styles.titleText].join(' ')}>Get the List of Documents required for your Qardan Hasana Application:</h3>
-        <div className={[styles.optionsWrapper].join(' ')}>
-          <div className={[styles.optionCategory, "well"].join(' ')}>
-            <FormGroup>
-              <ControlLabel>
-                Select Purpose
-              </ControlLabel>
-              <br/>
-              <Radio inline
-                     name="purposeOption"
-                     onChange={this.handlePurposeOptionChange}
-                     value={defaultSettings.purpose.existingBusiness}
-                     checked={this.state.selectedPurpose === defaultSettings.purpose.existingBusiness}>
-                For Existing Business
-              </Radio>
-              <br/>
-              <Radio inline
-                     name="purposeOption"
-                     onChange={this.handlePurposeOptionChange}
-                     value={defaultSettings.purpose.newBusiness}
-                     checked={this.state.selectedPurpose === defaultSettings.purpose.newBusiness}>
-                New Business
-              </Radio>
-            </FormGroup>
+        <form action="">
+          <div className={[styles.optionsWrapper].join(' ')}>
+            <div className={[styles.optionCategory, "well"].join(' ')}>
+              <FormGroup>
+                <ControlLabel>
+                  Select Purpose
+                </ControlLabel>
+                <br/>
+                <Radio inline
+                       name="purposeOption"
+                       onChange={this.handlePurposeOptionChange}
+                       value={defaultSettings.purpose.existingBusiness}
+                       checked={this.state.selectedPurpose === defaultSettings.purpose.existingBusiness}>
+                  For Existing Business
+                </Radio>
+                <br/>
+                <Radio inline
+                       name="purposeOption"
+                       onChange={this.handlePurposeOptionChange}
+                       value={defaultSettings.purpose.newBusiness}
+                       checked={this.state.selectedPurpose === defaultSettings.purpose.newBusiness}>
+                  New Business
+                </Radio>
+              </FormGroup>
+            </div>
+            <div className={[styles.optionCategory, "well"].join(' ')}>
+              <FormGroup>
+                <ControlLabel>
+                  Enter Amount
+                </ControlLabel>
+                <FormControl type="text"
+                             defaultValue={this.state.amount}
+                             id="id-amount"
+                             onChange={this.onAmountChange} />
+              </FormGroup>
+            </div>
+            <div className={[styles.optionCategory, "well"].join(' ')}>
+              <FormGroup>
+                <ControlLabel>
+                  Source of Income
+                </ControlLabel>
+                <br/>
+                <Radio inline
+                       name="incomeSourceOption"
+                       onChange={this.handleincomeSourceOptionChange}
+                       value={defaultSettings.sourceOfIncome.businessSoleProprietorship}
+                       checked={this.state.selectedIncomeSource === defaultSettings.sourceOfIncome.businessSoleProprietorship}>
+                  Business (Sole Proprietor)
+                </Radio>
+                <br/>
+                <Radio inline
+                       name="incomeSourceOption"
+                       onChange={this.handleincomeSourceOptionChange}
+                       value={defaultSettings.sourceOfIncome.businessPartnership}
+                       checked={this.state.selectedIncomeSource === defaultSettings.sourceOfIncome.businessPartnership}>
+                  Business (Partnership)
+                </Radio>
+              </FormGroup>
+            </div>
           </div>
-          <div className={[styles.optionCategory, "well"].join(' ')}>
-            <FormGroup>
-              <ControlLabel>
-                Enter Amount
-              </ControlLabel>
-              <FormControl type="text"
-                           defaultValue={1000000}
-                           id="id-amount" />
-            </FormGroup>
-          </div>
-          <div className={[styles.optionCategory, "well"].join(' ')}>
-            <FormGroup>
-              <ControlLabel>
-                Source of Income
-              </ControlLabel>
-              <br/>
-              <Radio inline
-                     name="incomeSourceOption"
-                     onChange={this.handleincomeSourceOptionChange}
-                     value={defaultSettings.sourceOfIncome.businessSoleProprietorship}
-                     checked={this.state.selectedIncomeSource === defaultSettings.sourceOfIncome.businessSoleProprietorship}>
-                Business (Sole Proprietor)
-              </Radio>
-              <br/>
-              <Radio inline
-                     name="incomeSourceOption"
-                     onChange={this.handleincomeSourceOptionChange}
-                     value={defaultSettings.sourceOfIncome.businessPartnership}
-                     checked={this.state.selectedIncomeSource === defaultSettings.sourceOfIncome.businessPartnership}>
-                Business (Partnership)
-              </Radio>
-            </FormGroup>
-          </div>
-        </div>
-        <h2 className={[styles.pageTitle].join(' ')}>Get INSTANT quotes for Metal Doors!</h2>
-        <h3 className={[styles.pageSubTitle].join(' ')}>Select a Door Type</h3>
-        <CategoryWrapperContainer />
+          <button className="btn btn-primary"
+                  type="button"
+                  onClick={this.btnClickGetDocList}>
+            Get Documents List!
+          </button>
+        </form>
       </div>
     );
   }
