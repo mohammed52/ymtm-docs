@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { connect } from 'react-redux';
+import { browserHistory } from 'react-router';
+
 import docsListForProfile from './helpers/docsListForProfile'
 import docsListForApplicationGeneral from './helpers/docsListForApplicationGeneral'
 import docsListForApplicationSpecific from './helpers/docsListForApplicationSpecific'
@@ -21,6 +23,9 @@ class ShowDocsContainer extends Component {
 
   constructor(props) {
     super(props);
+    this.btnClickGoBack = this.btnClickGoBack.bind(this);
+
+
     this.state = {
       applicationDetails: this.props.location.state.applicationDetails
     }
@@ -32,6 +37,15 @@ class ShowDocsContainer extends Component {
     console.log("ShowDocsContainer componentDidUpdate");
   }
 
+  btnClickGoBack() {
+    browserHistory.push({
+      pathname: '/',
+      state: {
+        applicationDetails: this.props.location.state.applicationDetails
+      }
+    });
+  }
+
   render() {
     console.log("this.state.applicationDetails", this.state.applicationDetails);
 
@@ -41,9 +55,29 @@ class ShowDocsContainer extends Component {
     console.log("applicationDocsGeneral", applicationDocsGeneral);
     let applicationDocsSpecfic = docsListForApplicationSpecific(this.state.applicationDetails);
     console.log("applicationDocsSpecfic", applicationDocsSpecfic);
+
+    let divArrProfileDocList = [];
+    for (var i = 0; i < profileDocs.length; i++) {
+      const sn = i + 1;
+      divArrProfileDocList.push(
+        <div key={"divArrProfileDocList" + i}>
+          {sn + ". " + profileDocs[i].docName}
+        </div>
+
+      )
+    }
     return (
       <div>
-        Show Docs
+        <button className="btn btn-primary"
+                type="button"
+                onClick={this.btnClickGoBack}>
+          Get Documents List!
+        </button>
+        <br/>
+        <br/>
+        <strong>Documents required for your profile (one time only):</strong>
+        <br/>
+        {divArrProfileDocList}
       </div>
     );
   }
