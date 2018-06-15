@@ -35,7 +35,7 @@ export default (store) => {
     <Route path="/"
            component={App}>
       <IndexRoute component={Home}
-                  fetchData={fetchVoteData} />
+                  fetchData={null} />
       <Route path="/showdocs"
              component={ShowDocsPage} />
     </Route>

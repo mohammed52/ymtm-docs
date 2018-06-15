@@ -46,14 +46,14 @@ export default (app) => {
   }
 
   // topic routes
-  if (topicsController) {
-    app.get('/topic', topicsController.all);
-    app.post('/topic/:id', topicsController.add);
-    app.put('/topic/:id', topicsController.update);
-    app.delete('/topic/:id', topicsController.remove);
-  } else {
-    console.warn(unsupportedMessage('topics routes'));
-  }
+// if (topicsController) {
+//   app.get('/topic', topicsController.all);
+//   app.post('/topic/:id', topicsController.add);
+//   app.put('/topic/:id', topicsController.update);
+//   app.delete('/topic/:id', topicsController.remove);
+// } else {
+//   console.warn(unsupportedMessage('topics routes'));
+// }
 
   // selectedOptions routes
   if (selectedOptionsController) {
