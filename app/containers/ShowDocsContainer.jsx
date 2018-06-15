@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { connect } from 'react-redux';
+import docsListForProfile from './helpers/docsListForProfile'
+import docsListForApplicationGeneral from './helpers/docsListForApplicationGeneral'
+import docsListForApplicationSpecific from './helpers/docsListForApplicationSpecific'
 
 var ReactBootstrap = require('react-bootstrap');
 var Button = ReactBootstrap.Button;
@@ -23,17 +26,21 @@ class ShowDocsContainer extends Component {
     }
   }
 
-  componentDidMount() {
-    console.log("ShowDocsContainer componentDidMount");
-    console.log("this.state.applicationDetails", this.state.applicationDetails);
-  }
+  componentDidMount() {}
 
   componentDidUpdate() {
     console.log("ShowDocsContainer componentDidUpdate");
   }
 
   render() {
+    console.log("this.state.applicationDetails", this.state.applicationDetails);
 
+    let profileDocs = docsListForProfile(this.state.applicationDetails);
+    console.log("profileDocs", profileDocs);
+    let applicationDocsGeneral = docsListForApplicationGeneral(this.state.applicationDetails);
+    console.log("applicationDocsGeneral", applicationDocsGeneral);
+    let applicationDocsSpecfic = docsListForApplicationSpecific(this.state.applicationDetails);
+    console.log("applicationDocsSpecfic", applicationDocsSpecfic);
     return (
       <div>
         Show Docs

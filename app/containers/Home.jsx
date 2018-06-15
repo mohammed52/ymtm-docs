@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import classNames from 'classnames/bind';
-import CategoryWrapperContainer from './CategoryWrapperContainer'
 import styles from '../css/components/homeStyles';
 import ymtm from '../images/ymtm.png';
 import { browserHistory } from 'react-router';
-// import { defaultSettings } from './defaultSettings'
+import { DEFAULT_SETTINGS } from './helpers/defaultSettings'
 
 var ReactBootstrap = require('react-bootstrap');
 var Button = ReactBootstrap.Button;
@@ -19,24 +18,7 @@ var Table = ReactBootstrap.Table;
 var FieldGroup = ReactBootstrap.FieldGroup;
 var Input = ReactBootstrap.Input;
 
-const defaultSettings = {
-  purpose: {
-    existingBusiness: "existingBusiness",
-    newBusiness: "newBusiness",
-    ziarat: "ziarat",
-    schoolUniversityFees: "schoolUniversityFees",
-    propertyPurchase: "propertyPurchase",
-    carMotorcycle: "carMotorcycle",
-    jamaatDuesWajebaatFmb: "jamaatDuesWajebaatFmb"
-  },
-  amount: 1000000,
-  sourceOfIncome: {
-    businessSoleProprietorship: "businessSoleProprietorship",
-    businessPartnership: "businessPartnership",
-    job: "job",
-    homeBasedIncomeTuition: "homeBasedIncomeTuition"
-  }
-}
+
 
 class Home extends Component {
 
@@ -47,9 +29,9 @@ class Home extends Component {
     this.btnClickGetDocList = this.btnClickGetDocList.bind(this);
     this.onAmountChange = this.onAmountChange.bind(this);
     this.state = {
-      selectedPurpose: defaultSettings.purpose.existingBusiness,
-      selectedIncomeSource: defaultSettings.sourceOfIncome.businessSoleProprietorship,
-      amount: defaultSettings.amount
+      PURPOSE: DEFAULT_SETTINGS.PURPOSE.TAG_EXISTING_BUSINESS,
+      SOURCE_OF_INCOME: DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_BUSINESS_SOLE_PROP,
+      AMOUNT: DEFAULT_SETTINGS.AMOUNT
     }
   }
 
@@ -63,22 +45,22 @@ class Home extends Component {
 
   handlePurposeOptionChange(changeEvent) {
     this.setState({
-      selectedPurpose: changeEvent.target.value
+      PURPOSE: changeEvent.target.value
     });
   }
 
   handleincomeSourceOptionChange(changeEvent) {
     this.setState({
-      selectedIncomeSource: changeEvent.target.value
+      SOURCE_OF_INCOME: changeEvent.target.value
     })
   }
 
   btnClickGetDocList() {
     console.log("btnClickGetDocList");
     const applicationDetails = {
-      purpose: this.state.selectedPurpose,
-      amount: this.state.amount,
-      incomeSource: this.state.selectedIncomeSource
+      PURPOSE: this.state.PURPOSE,
+      AMOUNT: this.state.AMOUNT,
+      SOURCE_OF_INCOME: this.state.SOURCE_OF_INCOME
     }
     console.log("applicationDetails", applicationDetails);
     browserHistory.push({
@@ -91,7 +73,7 @@ class Home extends Component {
 
   onAmountChange(event) {
     this.setState({
-      amount: event.target.value
+      AMOUNT: event.target.value
     })
   }
 
@@ -107,23 +89,63 @@ class Home extends Component {
             <div className={[styles.optionCategory, "well"].join(' ')}>
               <FormGroup>
                 <ControlLabel>
-                  Select Purpose
+                  Select Qardan Hasana Purpose
                 </ControlLabel>
                 <br/>
                 <Radio inline
-                       name="purposeOption"
+                       name="PURPOSEOption"
                        onChange={this.handlePurposeOptionChange}
-                       value={defaultSettings.purpose.existingBusiness}
-                       checked={this.state.selectedPurpose === defaultSettings.purpose.existingBusiness}>
+                       value={DEFAULT_SETTINGS.PURPOSE.TAG_EXISTING_BUSINESS}
+                       checked={this.state.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_EXISTING_BUSINESS}>
                   For Existing Business
                 </Radio>
                 <br/>
                 <Radio inline
-                       name="purposeOption"
+                       name="PURPOSEOption"
                        onChange={this.handlePurposeOptionChange}
-                       value={defaultSettings.purpose.newBusiness}
-                       checked={this.state.selectedPurpose === defaultSettings.purpose.newBusiness}>
-                  New Business
+                       value={DEFAULT_SETTINGS.PURPOSE.TAG_NEW_BUSINESS}
+                       checked={this.state.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_NEW_BUSINESS}>
+                  For New Business
+                </Radio>
+                <br/>
+                <Radio inline
+                       name="PURPOSEOption"
+                       onChange={this.handlePurposeOptionChange}
+                       value={DEFAULT_SETTINGS.PURPOSE.TAG_ZIARAT}
+                       checked={this.state.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_ZIARAT}>
+                  Ziarat
+                </Radio>
+                <br/>
+                <Radio inline
+                       name="PURPOSEOption"
+                       onChange={this.handlePurposeOptionChange}
+                       value={DEFAULT_SETTINGS.PURPOSE.TAG_SCHOOL_UNI_FEES}
+                       checked={this.state.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_SCHOOL_UNI_FEES}>
+                  Fees (School/University)
+                </Radio>
+                <br/>
+                <Radio inline
+                       name="PURPOSEOption"
+                       onChange={this.handlePurposeOptionChange}
+                       value={DEFAULT_SETTINGS.PURPOSE.TAG_PROPERTY_PURCHASE}
+                       checked={this.state.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_PROPERTY_PURCHASE}>
+                  Fees (School/University)
+                </Radio>
+                <br/>
+                <Radio inline
+                       name="PURPOSEOption"
+                       onChange={this.handlePurposeOptionChange}
+                       value={DEFAULT_SETTINGS.PURPOSE.TAG_CAR_MOTORCYCLE}
+                       checked={this.state.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_CAR_MOTORCYCLE}>
+                  Car / Motorcycle
+                </Radio>
+                <br/>
+                <Radio inline
+                       name="PURPOSEOption"
+                       onChange={this.handlePurposeOptionChange}
+                       value={DEFAULT_SETTINGS.PURPOSE.TAG_JAMAAT_WAJEBAAT_FMB_DUES}
+                       checked={this.state.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_JAMAAT_WAJEBAAT_FMB_DUES}>
+                  Jamaat Dues / Wajebaat / Fmb
                 </Radio>
               </FormGroup>
             </div>
@@ -133,31 +155,47 @@ class Home extends Component {
                   Enter Amount
                 </ControlLabel>
                 <FormControl type="text"
-                             defaultValue={this.state.amount}
-                             id="id-amount"
+                             defaultValue={this.state.AMOUNT}
+                             id="id-AMOUNT"
                              onChange={this.onAmountChange} />
               </FormGroup>
             </div>
             <div className={[styles.optionCategory, "well"].join(' ')}>
               <FormGroup>
                 <ControlLabel>
-                  Source of Income
+                  Your Source of Income
                 </ControlLabel>
                 <br/>
                 <Radio inline
                        name="incomeSourceOption"
                        onChange={this.handleincomeSourceOptionChange}
-                       value={defaultSettings.sourceOfIncome.businessSoleProprietorship}
-                       checked={this.state.selectedIncomeSource === defaultSettings.sourceOfIncome.businessSoleProprietorship}>
+                       value={DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_BUSINESS_SOLE_PROP}
+                       checked={this.state.SOURCE_OF_INCOME === DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_BUSINESS_SOLE_PROP}>
                   Business (Sole Proprietor)
                 </Radio>
                 <br/>
                 <Radio inline
                        name="incomeSourceOption"
                        onChange={this.handleincomeSourceOptionChange}
-                       value={defaultSettings.sourceOfIncome.businessPartnership}
-                       checked={this.state.selectedIncomeSource === defaultSettings.sourceOfIncome.businessPartnership}>
+                       value={DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_BUSINESS_PARTNERSHIP}
+                       checked={this.state.SOURCE_OF_INCOME === DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_BUSINESS_PARTNERSHIP}>
                   Business (Partnership)
+                </Radio>
+                <br/>
+                <Radio inline
+                       name="incomeSourceOption"
+                       onChange={this.handleincomeSourceOptionChange}
+                       value={DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_JOB}
+                       checked={this.state.SOURCE_OF_INCOME === DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_JOB}>
+                  Job
+                </Radio>
+                <br/>
+                <Radio inline
+                       name="incomeSourceOption"
+                       onChange={this.handleincomeSourceOptionChange}
+                       value={DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_HOME_BASED_INCOME_TUITION}
+                       checked={this.state.SOURCE_OF_INCOME === DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_HOME_BASED_INCOME_TUITION}>
+                  Home based income (tuition/therapy etc.)
                 </Radio>
               </FormGroup>
             </div>
