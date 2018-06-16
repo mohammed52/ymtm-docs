@@ -29,7 +29,7 @@ class Home extends Component {
     this.handleincomeSourceOptionChange = this.handleincomeSourceOptionChange.bind(this);
     this.btnClickGetDocList = this.btnClickGetDocList.bind(this);
     this.onAmountChange = this.onAmountChange.bind(this);
-    console.log("this.props.location.state.applicationDetails", this.props.location.state.applicationDetails);
+    // console.log("this.props.location.state.applicationDetails", this.props.location.state.applicationDetails);
 
     this.state = {
       PURPOSE: DEFAULT_SETTINGS.PURPOSE.TAG_EXISTING_BUSINESS,
