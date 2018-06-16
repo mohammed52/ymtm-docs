@@ -56,6 +56,7 @@ class ShowDocsContainer extends Component {
     let applicationDocsSpecfic = docsListForApplicationSpecific(this.state.applicationDetails);
     console.log("applicationDocsSpecfic", applicationDocsSpecfic);
 
+
     let divArrProfileDocList = [];
     for (var i = 0; i < profileDocs.length; i++) {
       const sn = i + 1;
@@ -66,18 +67,55 @@ class ShowDocsContainer extends Component {
 
       )
     }
+
+    let divArrGeneralDocList = [];
+    for (var j = 0; j < applicationDocsGeneral.length; j++) {
+      const sn = j + 1;
+      divArrGeneralDocList.push(
+        <div key={"divArrGeneralDocList" + j}>
+          {sn + ". " + applicationDocsGeneral[j].docName}
+        </div>
+
+      )
+    }
+
+    let divArrSpecificDocList = [];
+    for (var k = 0; k < applicationDocsSpecfic.length; k++) {
+      const sn = k + 1 + j;
+      divArrSpecificDocList.push(
+        <div key={"divArrSpecificDocList" + k}>
+          {sn + ". " + applicationDocsSpecfic[k].docName}
+        </div>
+
+      )
+    }
+
     return (
-      <div>
+      <div className="container-fluid">
         <button className="btn btn-primary"
                 type="button"
                 onClick={this.btnClickGoBack}>
-          Get Documents List!
+          Go Back
         </button>
         <br/>
         <br/>
-        <strong>Documents required for your profile (one time only):</strong>
-        <br/>
-        {divArrProfileDocList}
+        <div className='well'>
+          <br/>
+          <strong>Documents required for your profile (one time only):</strong>
+          <br/>
+          {divArrProfileDocList}
+          <br/>
+          <strong>Documents required with your Application:</strong>
+          <br/>
+          {divArrGeneralDocList}
+          {divArrSpecificDocList}
+          <br/>
+        </div>
+        <button className="btn btn-primary"
+                type="button"
+                onClick={this.btnClickGoBack}>
+          Go Back
+        </button>
       </div>
     );
   }

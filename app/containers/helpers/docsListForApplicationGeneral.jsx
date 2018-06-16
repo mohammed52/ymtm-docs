@@ -44,7 +44,7 @@ export default function docsListForApplicationGeneral(applicationDetails) {
     applicationDetails.SOURCE_OF_INCOME === DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_BUSINESS_PARTNERSHIP ||
     applicationDetails.SOURCE_OF_INCOME === DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_BUSINESS_SOLE_PROP)) {
     generalDocList.push({
-      docName: "Financials (plz fill sheet # 6,7,8,9 for assistance, contact: Shk Burhanuddin Jasden)",
+      docName: "Financials (sheet # 6,7,8,9, Shk Burhanuddin Jasden)",
       docTemplate: null
     })
   }
