@@ -133,7 +133,7 @@ class Home extends Component {
                        onChange={this.handlePurposeOptionChange}
                        value={DEFAULT_SETTINGS.PURPOSE.TAG_PROPERTY_PURCHASE}
                        checked={this.state.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_PROPERTY_PURCHASE}>
-                  Fees (School/University)
+                  Property Purchase
                 </Radio>
                 <br/>
                 <Radio inline

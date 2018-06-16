@@ -9,6 +9,7 @@ import docsListForApplicationGeneral from './helpers/docsListForApplicationGener
 import docsListForApplicationSpecific from './helpers/docsListForApplicationSpecific'
 import { setSelectedOptions } from '../actions/selectedOptionsActions'
 
+import styles from '../css/components/showDocsStyles';
 
 var ReactBootstrap = require('react-bootstrap');
 var Button = ReactBootstrap.Button;
@@ -63,7 +64,8 @@ class ShowDocsContainer extends Component {
     for (var i = 0; i < profileDocs.length; i++) {
       const sn = i + 1;
       divArrProfileDocList.push(
-        <div key={"divArrProfileDocList" + i}>
+        <div className={[styles.docsItem].join(' ')}
+             key={"divArrProfileDocList" + i}>
           {sn + ". " + profileDocs[i].docName}
         </div>
 
@@ -74,7 +76,8 @@ class ShowDocsContainer extends Component {
     for (var j = 0; j < applicationDocsGeneral.length; j++) {
       const sn = j + 1;
       divArrGeneralDocList.push(
-        <div key={"divArrGeneralDocList" + j}>
+        <div className={[styles.docsItem].join(' ')}
+             key={"divArrGeneralDocList" + j}>
           {sn + ". " + applicationDocsGeneral[j].docName}
         </div>
 
@@ -85,7 +88,8 @@ class ShowDocsContainer extends Component {
     for (var k = 0; k < applicationDocsSpecfic.length; k++) {
       const sn = k + 1 + j;
       divArrSpecificDocList.push(
-        <div key={"divArrSpecificDocList" + k}>
+        <div className={[styles.docsItem].join(' ')}
+             key={"divArrSpecificDocList" + k}>
           {sn + ". " + applicationDocsSpecfic[k].docName}
         </div>
 
@@ -94,12 +98,12 @@ class ShowDocsContainer extends Component {
 
     return (
       <div className="container-fluid">
-        <div className='well'>
-          <strong>Documents required for your profile (one time only):</strong>
+        <div className={[styles.docsListWrapper, 'well'].join(' ')}>
+          <strong className={[styles.docsItem].join(' ')}>Documents required for your profile (one time only):</strong>
           <br/>
           {divArrProfileDocList}
           <br/>
-          <strong>Documents required with your Application:</strong>
+          <strong className={[styles.docsItem].join(' ')}>Documents required with your Application:</strong>
           <br/>
           {divArrGeneralDocList}
           {divArrSpecificDocList}

@@ -30,9 +30,8 @@ body {
 
 .mainWrapper {
   padding-top: 20px;/*  background-color: yellow;
-                      display: none;*/
+                          display: none;*/
   width: 100%;
-  border: 1px solid yellow;
 }
 
 .headerWrapper {
@@ -42,7 +41,6 @@ body {
 
 .headerWrapper2 {
   text-align: center;
-  border: 1px solid red;
 }
 
 .loader, .loader:before, .loader:after {
