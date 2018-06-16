@@ -7,6 +7,8 @@ import { browserHistory } from 'react-router';
 import docsListForProfile from './helpers/docsListForProfile'
 import docsListForApplicationGeneral from './helpers/docsListForApplicationGeneral'
 import docsListForApplicationSpecific from './helpers/docsListForApplicationSpecific'
+import { setSelectedOptions } from '../actions/selectedOptionsActions'
+
 
 var ReactBootstrap = require('react-bootstrap');
 var Button = ReactBootstrap.Button;
@@ -92,15 +94,7 @@ class ShowDocsContainer extends Component {
 
     return (
       <div className="container-fluid">
-        <button className="btn btn-primary"
-                type="button"
-                onClick={this.btnClickGoBack}>
-          Go Back
-        </button>
-        <br/>
-        <br/>
         <div className='well'>
-          <br/>
           <strong>Documents required for your profile (one time only):</strong>
           <br/>
           {divArrProfileDocList}
@@ -109,7 +103,6 @@ class ShowDocsContainer extends Component {
           <br/>
           {divArrGeneralDocList}
           {divArrSpecificDocList}
-          <br/>
         </div>
         <button className="btn btn-primary"
                 type="button"
@@ -135,6 +128,7 @@ function mapStateToProps(state) {
   return {
     // topics: state.topic.topics,
     // newTopic: state.topic.newTopic
+
   };
 }
 

@@ -66,17 +66,15 @@ class App extends Component {
       <div>
         {!this.state.cssHasLoaded ? <div/> :
          <div className={styles.mainWrapper}>
-         <div className={styles.headerWrapper2}>
-           
-           <div className={styles.headerWrapper}>
-             <img src={ymtm}
-                  width="90"
-                  height="90"
-                  className="img-fluid" />
-             <strong>Helpline: 0313-7590210</strong>
+           <div className={styles.headerWrapper2}>
+             <div className={styles.headerWrapper}>
+               <img src={ymtm}
+                    width="90"
+                    height="90"
+                    className="img-fluid" />
+               <strong>Helpline: 0313-7590210</strong>
+             </div>
            </div>
-         </div>
-           <br/>
            {this.props.children}
          </div>}
       </div>

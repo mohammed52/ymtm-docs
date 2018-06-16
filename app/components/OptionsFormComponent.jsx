@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import classNames from 'classnames/bind';
-import { browserHistory } from 'react-router';
 import styles from '../css/components/homeStyles';
 import ymtm from '../images/ymtm.png';
+import { browserHistory } from 'react-router';
 import { DEFAULT_SETTINGS } from './helpers/defaultSettings'
-// import OptionsFormComponent from '../components/OptionsFormComponent'
 
 var ReactBootstrap = require('react-bootstrap');
 var Button = ReactBootstrap.Button;
@@ -85,7 +84,6 @@ class Home extends Component {
   render() {
 
     return (
-
       <div className={[styles.homeWrapper].join(' ')}>
         <h3 className={[styles.titleText].join(' ')}>Get the List of Documents required for your Qardan Hasana Application:</h3>
         <form action="">
