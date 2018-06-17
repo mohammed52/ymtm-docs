@@ -8,6 +8,7 @@ import docsListForProfile from './helpers/docsListForProfile'
 import docsListForApplicationGeneral from './helpers/docsListForApplicationGeneral'
 import docsListForApplicationSpecific from './helpers/docsListForApplicationSpecific'
 import { setSelectedOptions } from '../actions/selectedOptionsActions'
+import { DEFAULT_SETTINGS } from './helpers/defaultSettings'
 
 import styles from '../css/components/showDocsStyles';
 
@@ -99,10 +100,13 @@ class ShowDocsContainer extends Component {
     return (
       <div className="container-fluid">
         <div className={[styles.docsListWrapper, 'well'].join(' ')}>
-          <strong className={[styles.docsItem].join(' ')}>Documents required for your profile (one time only):</strong>
-          <br/>
-          {divArrProfileDocList}
-          <br/>
+          {this.props.location.state.applicationDetails.REPEAT_APPLY === DEFAULT_SETTINGS.REPEAT_APPLY.TAG_FIRST_TIME_APPLY ?
+           <div>
+             <strong className={[styles.docsItem].join(' ')}>Documents required for your profile (one time only):</strong>
+             <br/>
+             {divArrProfileDocList}
+             <br/>
+           </div> : ''}
           <strong className={[styles.docsItem].join(' ')}>Documents required with your Application:</strong>
           <br/>
           {divArrGeneralDocList}

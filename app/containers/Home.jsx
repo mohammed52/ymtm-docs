@@ -18,6 +18,7 @@ var Radio = ReactBootstrap.Radio;
 var Table = ReactBootstrap.Table;
 var FieldGroup = ReactBootstrap.FieldGroup;
 var Input = ReactBootstrap.Input;
+var Checkbox = ReactBootstrap.Checkbox;
 
 
 
@@ -27,6 +28,7 @@ class Home extends Component {
     super(props);
     this.handlePurposeOptionChange = this.handlePurposeOptionChange.bind(this);
     this.handleincomeSourceOptionChange = this.handleincomeSourceOptionChange.bind(this);
+    this.handlerepeatApplyOptionsChange = this.handlerepeatApplyOptionsChange.bind(this);
     this.btnClickGetDocList = this.btnClickGetDocList.bind(this);
     this.onAmountChange = this.onAmountChange.bind(this);
     // console.log("this.props.location.state.applicationDetails", this.props.location.state.applicationDetails);
@@ -34,7 +36,8 @@ class Home extends Component {
     this.state = {
       PURPOSE: DEFAULT_SETTINGS.PURPOSE.TAG_EXISTING_BUSINESS,
       SOURCE_OF_INCOME: DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_BUSINESS_SOLE_PROP,
-      AMOUNT: DEFAULT_SETTINGS.AMOUNT
+      AMOUNT: DEFAULT_SETTINGS.AMOUNT,
+      REPEAT_APPLY: DEFAULT_SETTINGS.REPEAT_APPLY.TAG_FIRST_TIME_APPLY
     }
   }
 
@@ -57,13 +60,19 @@ class Home extends Component {
       SOURCE_OF_INCOME: changeEvent.target.value
     })
   }
+  handlerepeatApplyOptionsChange(changeEvent) {
+    this.setState({
+      REPEAT_APPLY: changeEvent.target.value
+    })
+  }
 
   btnClickGetDocList() {
     console.log("btnClickGetDocList");
     const applicationDetails = {
       PURPOSE: this.state.PURPOSE,
       AMOUNT: this.state.AMOUNT,
-      SOURCE_OF_INCOME: this.state.SOURCE_OF_INCOME
+      SOURCE_OF_INCOME: this.state.SOURCE_OF_INCOME,
+      REPEAT_APPLY: this.state.REPEAT_APPLY
     }
     console.log("applicationDetails", applicationDetails);
     browserHistory.push({
@@ -162,6 +171,27 @@ class Home extends Component {
                              defaultValue={this.state.AMOUNT}
                              id="id-AMOUNT"
                              onChange={this.onAmountChange} />
+              </FormGroup>
+              <FormGroup>
+                <ControlLabel>
+                  Have you taken Qardan Hasana Before?
+                </ControlLabel>
+                <br/>
+                <Radio inline
+                       name="repeatApplyOptions"
+                       onChange={this.handlerepeatApplyOptionsChange}
+                       value={DEFAULT_SETTINGS.REPEAT_APPLY.TAG_REPEAT_APPLY}
+                       checked={this.state.REPEAT_APPLY === DEFAULT_SETTINGS.REPEAT_APPLY.TAG_REPEAT_APPLY}>
+                  I have taken Qardan Hasana before
+                </Radio>
+                <br/>
+                <Radio inline
+                       name="repeatApplyOptions"
+                       onChange={this.handlerepeatApplyOptionsChange}
+                       value={DEFAULT_SETTINGS.REPEAT_APPLY.TAG_FIRST_TIME_APPLY}
+                       checked={this.state.REPEAT_APPLY === DEFAULT_SETTINGS.REPEAT_APPLY.TAG_FIRST_TIME_APPLY}>
+                  This is the first time I am applying for Qardan Hasana
+                </Radio>
               </FormGroup>
             </div>
             <div className={[styles.optionCategory, "well"].join(' ')}>
