@@ -6,6 +6,7 @@ import { browserHistory } from 'react-router';
 import styles from '../css/components/homeStyles';
 import ymtm from '../images/ymtm.png';
 import { DEFAULT_SETTINGS } from './helpers/defaultSettings'
+import { setAmount, setSourceOfIncome, setPurpose, setRepeatApply } from '../actions/selectedOptionsActions'
 // import OptionsFormComponent from '../components/OptionsFormComponent'
 
 var ReactBootstrap = require('react-bootstrap');
@@ -33,12 +34,12 @@ class Home extends Component {
     this.onAmountChange = this.onAmountChange.bind(this);
     // console.log("this.props.location.state.applicationDetails", this.props.location.state.applicationDetails);
 
-    this.state = {
-      PURPOSE: DEFAULT_SETTINGS.PURPOSE.TAG_EXISTING_BUSINESS,
-      SOURCE_OF_INCOME: DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_BUSINESS_SOLE_PROP,
-      AMOUNT: DEFAULT_SETTINGS.AMOUNT,
-      REPEAT_APPLY: DEFAULT_SETTINGS.REPEAT_APPLY.TAG_FIRST_TIME_APPLY
-    }
+  // this.state = {
+  //   PURPOSE: DEFAULT_SETTINGS.PURPOSE.TAG_EXISTING_BUSINESS,
+  //   SOURCE_OF_INCOME: DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_BUSINESS_SOLE_PROP,
+  //   AMOUNT: DEFAULT_SETTINGS.AMOUNT,
+  //   REPEAT_APPLY: DEFAULT_SETTINGS.REPEAT_APPLY.TAG_FIRST_TIME_APPLY
+  // }
   }
 
   componentDidMount() {
@@ -50,20 +51,28 @@ class Home extends Component {
   }
 
   handlePurposeOptionChange(changeEvent) {
-    this.setState({
-      PURPOSE: changeEvent.target.value
-    });
+    const {setPurpose} = this.props;
+    setPurpose(changeEvent.target.value);
+  // this.setState({
+  //   PURPOSE: changeEvent.target.value
+  // });
   }
 
   handleincomeSourceOptionChange(changeEvent) {
-    this.setState({
-      SOURCE_OF_INCOME: changeEvent.target.value
-    })
+    const {setSourceOfIncome} = this.props;
+    setSourceOfIncome(changeEvent.target.value);
+
+  // this.setState({
+  //   SOURCE_OF_INCOME: changeEvent.target.value
+  // })
   }
   handlerepeatApplyOptionsChange(changeEvent) {
-    this.setState({
-      REPEAT_APPLY: changeEvent.target.value
-    })
+    const {setRepeatApply} = this.props;
+    setRepeatApply(changeEvent.target.value);
+
+  // this.setState({
+  //   REPEAT_APPLY: changeEvent.target.value
+  // })
   }
 
   btnClickGetDocList() {
@@ -109,7 +118,7 @@ class Home extends Component {
                        name="PURPOSEOption"
                        onChange={this.handlePurposeOptionChange}
                        value={DEFAULT_SETTINGS.PURPOSE.TAG_EXISTING_BUSINESS}
-                       checked={this.state.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_EXISTING_BUSINESS}>
+                       checked={this.props.selectedOptions.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_EXISTING_BUSINESS}>
                   For Existing Business
                 </Radio>
                 <br/>
@@ -117,7 +126,7 @@ class Home extends Component {
                        name="PURPOSEOption"
                        onChange={this.handlePurposeOptionChange}
                        value={DEFAULT_SETTINGS.PURPOSE.TAG_NEW_BUSINESS}
-                       checked={this.state.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_NEW_BUSINESS}>
+                       checked={this.props.selectedOptions.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_NEW_BUSINESS}>
                   For New Business
                 </Radio>
                 <br/>
@@ -125,7 +134,7 @@ class Home extends Component {
                        name="PURPOSEOption"
                        onChange={this.handlePurposeOptionChange}
                        value={DEFAULT_SETTINGS.PURPOSE.TAG_ZIARAT}
-                       checked={this.state.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_ZIARAT}>
+                       checked={this.props.selectedOptions.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_ZIARAT}>
                   Ziarat
                 </Radio>
                 <br/>
@@ -133,7 +142,7 @@ class Home extends Component {
                        name="PURPOSEOption"
                        onChange={this.handlePurposeOptionChange}
                        value={DEFAULT_SETTINGS.PURPOSE.TAG_SCHOOL_UNI_FEES}
-                       checked={this.state.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_SCHOOL_UNI_FEES}>
+                       checked={this.props.selectedOptions.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_SCHOOL_UNI_FEES}>
                   Fees (School/University)
                 </Radio>
                 <br/>
@@ -141,7 +150,7 @@ class Home extends Component {
                        name="PURPOSEOption"
                        onChange={this.handlePurposeOptionChange}
                        value={DEFAULT_SETTINGS.PURPOSE.TAG_PROPERTY_PURCHASE}
-                       checked={this.state.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_PROPERTY_PURCHASE}>
+                       checked={this.props.selectedOptions.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_PROPERTY_PURCHASE}>
                   Property Purchase
                 </Radio>
                 <br/>
@@ -149,7 +158,7 @@ class Home extends Component {
                        name="PURPOSEOption"
                        onChange={this.handlePurposeOptionChange}
                        value={DEFAULT_SETTINGS.PURPOSE.TAG_CAR_MOTORCYCLE}
-                       checked={this.state.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_CAR_MOTORCYCLE}>
+                       checked={this.props.selectedOptions.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_CAR_MOTORCYCLE}>
                   Car / Motorcycle
                 </Radio>
                 <br/>
@@ -157,7 +166,7 @@ class Home extends Component {
                        name="PURPOSEOption"
                        onChange={this.handlePurposeOptionChange}
                        value={DEFAULT_SETTINGS.PURPOSE.TAG_JAMAAT_WAJEBAAT_FMB_DUES}
-                       checked={this.state.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_JAMAAT_WAJEBAAT_FMB_DUES}>
+                       checked={this.props.selectedOptions.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_JAMAAT_WAJEBAAT_FMB_DUES}>
                   Jamaat Dues / Wajebaat / Fmb
                 </Radio>
               </FormGroup>
@@ -168,7 +177,7 @@ class Home extends Component {
                   Enter Amount
                 </ControlLabel>
                 <FormControl type="text"
-                             defaultValue={this.state.AMOUNT}
+                             defaultValue={this.props.selectedOptions.AMOUNT}
                              id="id-AMOUNT"
                              onChange={this.onAmountChange} />
               </FormGroup>
@@ -181,7 +190,7 @@ class Home extends Component {
                        name="repeatApplyOptions"
                        onChange={this.handlerepeatApplyOptionsChange}
                        value={DEFAULT_SETTINGS.REPEAT_APPLY.TAG_REPEAT_APPLY}
-                       checked={this.state.REPEAT_APPLY === DEFAULT_SETTINGS.REPEAT_APPLY.TAG_REPEAT_APPLY}>
+                       checked={this.props.selectedOptions.REPEAT_APPLY === DEFAULT_SETTINGS.REPEAT_APPLY.TAG_REPEAT_APPLY}>
                   I have taken Qardan Hasana before
                 </Radio>
                 <br/>
@@ -189,7 +198,7 @@ class Home extends Component {
                        name="repeatApplyOptions"
                        onChange={this.handlerepeatApplyOptionsChange}
                        value={DEFAULT_SETTINGS.REPEAT_APPLY.TAG_FIRST_TIME_APPLY}
-                       checked={this.state.REPEAT_APPLY === DEFAULT_SETTINGS.REPEAT_APPLY.TAG_FIRST_TIME_APPLY}>
+                       checked={this.props.selectedOptions.REPEAT_APPLY === DEFAULT_SETTINGS.REPEAT_APPLY.TAG_FIRST_TIME_APPLY}>
                   This is the first time I am applying for Qardan Hasana
                 </Radio>
               </FormGroup>
@@ -204,7 +213,7 @@ class Home extends Component {
                        name="incomeSourceOption"
                        onChange={this.handleincomeSourceOptionChange}
                        value={DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_BUSINESS_SOLE_PROP}
-                       checked={this.state.SOURCE_OF_INCOME === DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_BUSINESS_SOLE_PROP}>
+                       checked={this.props.selectedOptions.SOURCE_OF_INCOME === DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_BUSINESS_SOLE_PROP}>
                   Business (Sole Proprietor)
                 </Radio>
                 <br/>
@@ -212,7 +221,7 @@ class Home extends Component {
                        name="incomeSourceOption"
                        onChange={this.handleincomeSourceOptionChange}
                        value={DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_BUSINESS_PARTNERSHIP}
-                       checked={this.state.SOURCE_OF_INCOME === DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_BUSINESS_PARTNERSHIP}>
+                       checked={this.props.selectedOptions.SOURCE_OF_INCOME === DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_BUSINESS_PARTNERSHIP}>
                   Business (Partnership)
                 </Radio>
                 <br/>
@@ -220,7 +229,7 @@ class Home extends Component {
                        name="incomeSourceOption"
                        onChange={this.handleincomeSourceOptionChange}
                        value={DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_JOB}
-                       checked={this.state.SOURCE_OF_INCOME === DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_JOB}>
+                       checked={this.props.selectedOptions.SOURCE_OF_INCOME === DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_JOB}>
                   Job
                 </Radio>
                 <br/>
@@ -228,7 +237,7 @@ class Home extends Component {
                        name="incomeSourceOption"
                        onChange={this.handleincomeSourceOptionChange}
                        value={DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_HOME_BASED_INCOME_TUITION}
-                       checked={this.state.SOURCE_OF_INCOME === DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_HOME_BASED_INCOME_TUITION}>
+                       checked={this.props.selectedOptions.SOURCE_OF_INCOME === DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_HOME_BASED_INCOME_TUITION}>
                   Home based income (tuition/therapy etc.)
                 </Radio>
               </FormGroup>
@@ -246,28 +255,28 @@ class Home extends Component {
 }
 
 Home.propTypes = {
-  // topics: PropTypes.array.isRequired,
-  // typing: PropTypes.func.isRequired,
-  // createTopic: PropTypes.func.isRequired,
-  // destroyTopic: PropTypes.func.isRequired,
-  // incrementCount: PropTypes.func.isRequired,
-  // decrementCount: PropTypes.func.isRequired,
-  // newTopic: PropTypes.string
+  selectedOptions: PropTypes.object.isRequired
+// topics: PropTypes.array.isRequired,
+// typing: PropTypes.func.isRequired,
+// createTopic: PropTypes.func.isRequired,
+// destroyTopic: PropTypes.func.isRequired,
+// incrementCount: PropTypes.func.isRequired,
+// decrementCount: PropTypes.func.isRequired,
+// newTopic: PropTypes.string
 };
 
 function mapStateToProps(state) {
   return {
-    // topics: state.topic.topics,
-    // newTopic: state.topic.newTopic
+    selectedOptions: state.selectedOptions,
+  // newTopic: state.topic.newTopic
   };
 }
 
 // Read more about where to place `connect` here:
 // https://github.com/rackt/react-redux/issues/75#issuecomment-135436563
 export default connect(mapStateToProps, {
-  // createTopic,
-  // typing,
-  // incrementCount,
-  // decrementCount,
-  // destroyTopic
+  setPurpose,
+  setSourceOfIncome,
+  setAmount,
+  setRepeatApply
 })(Home);
