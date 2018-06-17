@@ -32,7 +32,11 @@ export default function docsListForApplicationGeneral(applicationDetails) {
   }
 
   // personal expenses
-  if (applicationDetails.AMOUNT <= 500000) {
+  if (applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_ZIARAT ||
+    applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_SCHOOL_UNI_FEES ||
+    applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_PROPERTY_PURCHASE ||
+    applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_CAR_MOTORCYCLE ||
+    applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_JAMAAT_WAJEBAAT_FMB_DUES) {
     generalDocList.push({
       docName: "Personal Expenses",
       docTemplate: null
@@ -40,9 +44,16 @@ export default function docsListForApplicationGeneral(applicationDetails) {
   }
 
   // financials
-  if (applicationDetails.AMOUNT > 500000 && (
-    applicationDetails.SOURCE_OF_INCOME === DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_BUSINESS_PARTNERSHIP ||
-    applicationDetails.SOURCE_OF_INCOME === DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_BUSINESS_SOLE_PROP)) {
+  if (
+    applicationDetails.AMOUNT > 500000 &&
+    (
+    applicationDetails.SOURCE_OF_INCOME === DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_BUSINESS_SOLE_PROP ||
+    applicationDetails.SOURCE_OF_INCOME === DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_BUSINESS_PARTNERSHIP
+    ) &&
+    (
+    applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_EXISTING_BUSINESS ||
+    applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_PROPERTY_PURCHASE
+    )) {
     generalDocList.push({
       docName: "Financials (sheet # 6,7,8,9, Shk Burhanuddin Jasden)",
       docTemplate: null

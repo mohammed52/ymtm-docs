@@ -7,7 +7,7 @@ export default function docsListForApplicationSpecific(applicationDetails) {
   // business expansion plan
   if (applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_EXISTING_BUSINESS) {
     specificDocList.push({
-      docName: "Business Expansion Plan (Mohammed Bhai Petiwala)",
+      docName: "Business Expansion Plan",
       docTemplate: null
     })
   }
@@ -15,7 +15,7 @@ export default function docsListForApplicationSpecific(applicationDetails) {
   // new business plan
   if (applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_NEW_BUSINESS) {
     specificDocList.push({
-      docName: "New Business Plan (Mohammed Bhai Petiwala)",
+      docName: "New Business Plan",
       docTemplate: null
     })
   }
@@ -23,7 +23,7 @@ export default function docsListForApplicationSpecific(applicationDetails) {
   // application for qardan hasana for ziarat
   if (applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_ZIARAT) {
     specificDocList.push({
-      docName: "Application for Qardan Hasana for Ziarat (Mohammed Bhai Petiwala)",
+      docName: "Application for Qardan Hasana for Ziarat",
       docTemplate: null
     })
     specificDocList.push({
@@ -34,7 +34,7 @@ export default function docsListForApplicationSpecific(applicationDetails) {
 
   if (applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_SCHOOL_UNI_FEES) {
     specificDocList.push({
-      docName: "Application for Qardan Hasana for School / University Fees (Mohammed Bhai Petiwala)",
+      docName: "Application for Qardan Hasana for School / University Fees",
       docTemplate: null
     })
     specificDocList.push({
@@ -45,7 +45,7 @@ export default function docsListForApplicationSpecific(applicationDetails) {
 
   if (applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_PROPERTY_PURCHASE) {
     specificDocList.push({
-      docName: "Application for Qardan Hasana for Property Purchase (Mohammed Bhai Petiwala)",
+      docName: "Application for Qardan Hasana for Property Purchase",
       docTemplate: null
     })
     specificDocList.push({
@@ -61,7 +61,7 @@ export default function docsListForApplicationSpecific(applicationDetails) {
 
   if (applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_CAR_MOTORCYCLE) {
     specificDocList.push({
-      docName: "Application for Qardan Hasana for Car/Motorcycle (Mohammed Bhai Petiwala)",
+      docName: "Application for Qardan Hasana for Car/Motorcycle",
       docTemplate: null
     })
     specificDocList.push({
@@ -72,7 +72,7 @@ export default function docsListForApplicationSpecific(applicationDetails) {
 
   if (applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_JAMAAT_WAJEBAAT_FMB_DUES) {
     specificDocList.push({
-      docName: "Application for Qardan Hasana Jamaat/Wajebaat/FMB Dues (Mohammed Bhai Petiwala)",
+      docName: "Application for Qardan Hasana Jamaat/Wajebaat/FMB Dues",
       docTemplate: null
     })
     specificDocList.push({

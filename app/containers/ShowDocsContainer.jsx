@@ -112,6 +112,9 @@ class ShowDocsContainer extends Component {
           {divArrGeneralDocList}
           {divArrSpecificDocList}
         </div>
+        <strong className={[styles.docsItem].join(' ')}>Send above documents to Hussain Bhai Ghani in Tawfeer Office or email to: ymtm@yousufimohalla.com</strong>
+        <br/>
+        <br/>
         <button className="btn btn-primary"
                 type="button"
                 onClick={this.btnClickGoBack}>
