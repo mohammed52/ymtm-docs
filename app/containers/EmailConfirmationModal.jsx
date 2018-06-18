@@ -22,25 +22,14 @@ class EmailConfirmationModal extends Component {
     return (
       <Modal show={this.props.show}
              onHide={this.props.onHide}>
-        <Modal.Header closeButton>
-          <Modal.Title>
-            Settings
-          </Modal.Title>
-        </Modal.Header>
         <Modal.Body>
-          <strong>Select Cities:</strong> select cities
-          <FormGroup controlId="formControlsTextarea">
-            <Accordion>
-              Array Panels
-            </Accordion>
-          </FormGroup>
+          <div>
+            The list has been sent to your email!
+          </div>
         </Modal.Body>
         <Modal.Footer>
           <Button bsStyle="primary"
-                  onClick={this.props.onSendEmail}>
-            Send Email
-          </Button>
-          <Button onClick={this.props.onHide}>
+                  onClick={this.props.onHide}>
             Close
           </Button>
         </Modal.Footer>
@@ -51,8 +40,7 @@ class EmailConfirmationModal extends Component {
 
 EmailConfirmationModal.propTypes = {
   onHide: PropTypes.func.isRequired,
-  show: PropTypes.func.isRequired,
-  onSendEmail: PropTypes.func.isRequired,
+  show: PropTypes.bool.isRequired
 };
 
 

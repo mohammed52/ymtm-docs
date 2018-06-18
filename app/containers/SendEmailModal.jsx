@@ -24,7 +24,7 @@ class SendEmailModal extends Component {
              onHide={this.props.onHide}>
         <Modal.Header closeButton>
           <Modal.Title>
-            Settings
+            SHOW EMAIL MODAL
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -51,7 +51,7 @@ class SendEmailModal extends Component {
 
 SendEmailModal.propTypes = {
   onHide: PropTypes.func.isRequired,
-  show: PropTypes.func.isRequired,
+  show: PropTypes.bool.isRequired,
   sendEmail: PropTypes.func.isRequired,
 };
 

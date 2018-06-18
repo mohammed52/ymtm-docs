@@ -160,7 +160,7 @@ class ShowDocsContainer extends Component {
         </button>
         <SendEmailModal show={this.state.showSendEmailModal}
                         onHide={this.closeSendEmailModal}
-                        onSendEmail={this.sendEmail} />
+                        sendEmail={this.sendEmail} />
         <EmailConfirmationModal show={this.state.showEmailConfirmationModal}
                                 onHide={this.closeEmailConfirmationModal} />
       </div>
