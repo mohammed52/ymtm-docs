@@ -9,6 +9,8 @@ import docsListForApplicationGeneral from './helpers/docsListForApplicationGener
 import docsListForApplicationSpecific from './helpers/docsListForApplicationSpecific'
 import { setSelectedOptions } from '../actions/selectedOptionsActions'
 import { DEFAULT_SETTINGS } from './helpers/defaultSettings'
+import SendEmailModal from './SendEmailModal'
+import EmailConfirmationModal from './EmailConfirmationModal'
 
 import styles from '../css/components/showDocsStyles';
 
@@ -28,10 +30,16 @@ class ShowDocsContainer extends Component {
   constructor(props) {
     super(props);
     this.btnClickGoBack = this.btnClickGoBack.bind(this);
+    this.closeSendEmailModal = this.closeSendEmailModal.bind(this);
+    this.closeEmailConfirmationModal = this.closeEmailConfirmationModal.bind(this);
+    this.sendEmail = this.sendEmail.bind(this);
+    this.btnClickSendList = this.btnClickSendList.bind(this);
 
 
     this.state = {
-      applicationDetails: this.props.selectedOptions
+      applicationDetails: this.props.selectedOptions,
+      showSendEmailModal: false,
+      showEmailConfirmationModal: false,
     }
   }
 
@@ -46,6 +54,33 @@ class ShowDocsContainer extends Component {
       pathname: '/'
     });
   }
+
+  closeSendEmailModal() {
+    this.setState({
+      showSendEmailModal: false
+    })
+  }
+
+  closeEmailConfirmationModal() {
+    this.setState({
+      showEmailConfirmationModal: false
+    })
+  }
+
+  sendEmail() {
+    console.log("sendEmail");
+    this.setState({
+      showSendEmailModal: false,
+      showEmailConfirmationModal: true
+    })
+  }
+
+  btnClickSendList() {
+    this.setState({
+      showSendEmailModal: true
+    })
+  }
+
 
   render() {
     console.log("this.props.selectedOptions", this.props.selectedOptions);
@@ -114,9 +149,20 @@ class ShowDocsContainer extends Component {
         <br/>
         <button className="btn btn-primary"
                 type="button"
+                onClick={this.btnClickSendList}>
+          Send This List to my Email
+        </button>
+        <br/>
+        <button className="btn btn-default"
+                type="button"
                 onClick={this.btnClickGoBack}>
           Go Back
         </button>
+        <SendEmailModal show={this.state.showSendEmailModal}
+                        onHide={this.closeSendEmailModal}
+                        onSendEmail={this.sendEmail} />
+        <EmailConfirmationModal show={this.state.showEmailConfirmationModal}
+                                onHide={this.closeEmailConfirmationModal} />
       </div>
     );
   }
