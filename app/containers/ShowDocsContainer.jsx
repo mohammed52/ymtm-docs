@@ -11,6 +11,7 @@ import { setSelectedOptions } from '../actions/selectedOptionsActions'
 import { DEFAULT_SETTINGS } from './helpers/defaultSettings'
 import SendEmailModal from './SendEmailModal'
 import EmailConfirmationModal from './EmailConfirmationModal'
+import { validateEmail } from './helpers/validateEmail'
 
 import styles from '../css/components/showDocsStyles';
 
@@ -34,12 +35,15 @@ class ShowDocsContainer extends Component {
     this.closeEmailConfirmationModal = this.closeEmailConfirmationModal.bind(this);
     this.sendEmail = this.sendEmail.bind(this);
     this.btnClickSendList = this.btnClickSendList.bind(this);
+    this.onEmailChange = this.onEmailChange.bind(this);
 
 
     this.state = {
       applicationDetails: this.props.selectedOptions,
       showSendEmailModal: false,
       showEmailConfirmationModal: false,
+      email: "",
+      emailIsDiabled: true
     }
   }
 
@@ -78,6 +82,15 @@ class ShowDocsContainer extends Component {
   btnClickSendList() {
     this.setState({
       showSendEmailModal: true
+    })
+  }
+
+  onEmailChange(event) {
+    console.log("onEmailChange");
+    const buttonIsDisbled = !validateEmail(event.target.value);
+    this.setState({
+      email: event.target.value,
+      emailIsDiabled: buttonIsDisbled
     })
   }
 
@@ -160,7 +173,9 @@ class ShowDocsContainer extends Component {
         </button>
         <SendEmailModal show={this.state.showSendEmailModal}
                         onHide={this.closeSendEmailModal}
-                        sendEmail={this.sendEmail} />
+                        sendEmail={this.sendEmail}
+                        onEmailChange={this.onEmailChange}
+                        emailIsDiabled={this.state.emailIsDiabled} />
         <EmailConfirmationModal show={this.state.showEmailConfirmationModal}
                                 onHide={this.closeEmailConfirmationModal} />
       </div>

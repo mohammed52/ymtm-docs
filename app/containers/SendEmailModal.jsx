@@ -18,26 +18,31 @@ var FormControl = ReactBootstrap.FormControl;
 var Checkbox = ReactBootstrap.Checkbox
 
 class SendEmailModal extends Component {
+
+
+
   render() {
     return (
       <Modal show={this.props.show}
              onHide={this.props.onHide}>
         <Modal.Header closeButton>
           <Modal.Title>
-            SHOW EMAIL MODAL
+            Send List to Email
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <strong>Select Cities:</strong> select cities
-          <FormGroup controlId="formControlsTextarea">
-            <Accordion>
-              Array Panels
-            </Accordion>
+          <strong>Enter Your Email:</strong>
+          <FormGroup>
+            <FormControl type="text"
+                         id="id-email"
+                         onChange={this.props.onEmailChange}
+                         placeholder="youremail@xyz.com" />
           </FormGroup>
         </Modal.Body>
         <Modal.Footer>
           <Button bsStyle="primary"
-                  onClick={this.props.sendEmail}>
+                  onClick={this.props.sendEmail}
+                  disabled={this.props.emailIsDiabled}>
             Send Email
           </Button>
           <Button onClick={this.props.onHide}>
@@ -53,6 +58,8 @@ SendEmailModal.propTypes = {
   onHide: PropTypes.func.isRequired,
   show: PropTypes.bool.isRequired,
   sendEmail: PropTypes.func.isRequired,
+  onEmailChange: PropTypes.func.isRequired,
+  emailIsDiabled: PropTypes.bool.isRequired
 };
 
 
