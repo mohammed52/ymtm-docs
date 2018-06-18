@@ -31,7 +31,7 @@ class ShowDocsContainer extends Component {
 
 
     this.state = {
-      applicationDetails: this.props.location.state.applicationDetails
+      applicationDetails: this.props.selectedOptions
     }
   }
 
@@ -43,21 +43,18 @@ class ShowDocsContainer extends Component {
 
   btnClickGoBack() {
     browserHistory.push({
-      pathname: '/',
-      state: {
-        applicationDetails: this.props.location.state.applicationDetails
-      }
+      pathname: '/'
     });
   }
 
   render() {
-    console.log("this.state.applicationDetails", this.state.applicationDetails);
+    console.log("this.props.selectedOptions", this.props.selectedOptions);
 
-    let profileDocs = docsListForProfile(this.state.applicationDetails);
+    let profileDocs = docsListForProfile(this.props.selectedOptions);
     console.log("profileDocs", profileDocs);
-    let applicationDocsGeneral = docsListForApplicationGeneral(this.state.applicationDetails);
+    let applicationDocsGeneral = docsListForApplicationGeneral(this.props.selectedOptions);
     console.log("applicationDocsGeneral", applicationDocsGeneral);
-    let applicationDocsSpecfic = docsListForApplicationSpecific(this.state.applicationDetails);
+    let applicationDocsSpecfic = docsListForApplicationSpecific(this.props.selectedOptions);
     console.log("applicationDocsSpecfic", applicationDocsSpecfic);
 
 
@@ -100,7 +97,7 @@ class ShowDocsContainer extends Component {
     return (
       <div className="container-fluid">
         <div className={[styles.docsListWrapper, 'well'].join(' ')}>
-          {this.props.location.state.applicationDetails.REPEAT_APPLY === DEFAULT_SETTINGS.REPEAT_APPLY.TAG_FIRST_TIME_APPLY ?
+          {this.props.selectedOptions.REPEAT_APPLY === DEFAULT_SETTINGS.REPEAT_APPLY.TAG_FIRST_TIME_APPLY ?
            <div>
              <strong className={[styles.docsItem].join(' ')}>Documents required for your profile (one time only):</strong>
              <br/>
@@ -126,17 +123,19 @@ class ShowDocsContainer extends Component {
 }
 
 ShowDocsContainer.propTypes = {
-  // topics: PropTypes.array.isRequired,
-  // typing: PropTypes.func.isRequired,
-  // createTopic: PropTypes.func.isRequired,
-  // destroyTopic: PropTypes.func.isRequired,
-  // incrementCount: PropTypes.func.isRequired,
-  // decrementCount: PropTypes.func.isRequired,
-  // newTopic: PropTypes.string
+  selectedOptions: PropTypes.object.isRequired
+// topics: PropTypes.array.isRequired,
+// typing: PropTypes.func.isRequired,
+// createTopic: PropTypes.func.isRequired,
+// destroyTopic: PropTypes.func.isRequired,
+// incrementCount: PropTypes.func.isRequired,
+// decrementCount: PropTypes.func.isRequired,
+// newTopic: PropTypes.string
 };
 
 function mapStateToProps(state) {
   return {
+    selectedOptions: state.selectedOptions
     // topics: state.topic.topics,
     // newTopic: state.topic.newTopic
 

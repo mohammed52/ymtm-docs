@@ -76,26 +76,22 @@ class Home extends Component {
   }
 
   btnClickGetDocList() {
-    console.log("btnClickGetDocList");
-    const applicationDetails = {
-      PURPOSE: this.state.PURPOSE,
-      AMOUNT: this.state.AMOUNT,
-      SOURCE_OF_INCOME: this.state.SOURCE_OF_INCOME,
-      REPEAT_APPLY: this.state.REPEAT_APPLY
-    }
-    console.log("applicationDetails", applicationDetails);
+// console.log("btnClickGetDocList");
+// const applicationDetails = {
+//   PURPOSE: this.state.PURPOSE,
+//   AMOUNT: this.state.AMOUNT,
+//   SOURCE_OF_INCOME: this.state.SOURCE_OF_INCOME,
+//   REPEAT_APPLY: this.state.REPEAT_APPLY
+// }
+// console.log("applicationDetails", applicationDetails);
     browserHistory.push({
-      pathname: '/showdocs',
-      state: {
-        applicationDetails
-      }
+      pathname: '/showdocs'
     });
   }
 
   onAmountChange(event) {
-    this.setState({
-      AMOUNT: event.target.value
-    })
+    const {setAmount} = this.props;
+    setAmount(event.target.value);
   }
 
 
