@@ -68,9 +68,9 @@ export default (app) => {
   // check if routes are working
   // app.get('/testemail', sendEmail);
   // app.get('/sendquote', sendQuote);
-  if (sendDocsToEmail) {
+if (sendDocsToEmail) {
 
-    app.post('/senddocstoemail', sendDocsToEmail);
-  }
+  app.post('/senddocstoemail', sendDocsToEmail);
+}
 
 };

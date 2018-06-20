@@ -6,16 +6,29 @@ export default (mailOptions) => {
   // Only needed if you don't have a real mail account for testing
   nodemailer.createTestAccount((err, account) => {
 
-    // create reusable transporter object using the default SMTP transport
-    let transporter = nodemailer.createTransport({
-      host: 'smtp.sendgrid.net',
+    // let transporter = nodemailer.createTransport({
+    //   host: 'smtp.sendgrid.net',
+    //   port: 587,
+    //   secure: false,
+    //   auth: {
+    //     user: process.env.SENDGRID_USERNAME,
+    //     pass: process.env.SENDGRID_PASSWORD
+    //   }
+    // });
+
+// is this working
+
+    const transporter = nodemailer.createTransport({
+      host: 'smtp.ethereal.email',
       port: 587,
-      secure: false, // true for 465, false for other ports
       auth: {
-        user: process.env.SENDGRID_USERNAME, // generated ethereal user
-        pass: process.env.SENDGRID_PASSWORD // generated ethereal password
+        user: 'hwd3o6upqvrgvot4@ethereal.email',
+        pass: 'PMNP13EwbsRyVvzRDa'
       }
     });
+
+
+
 
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
