@@ -91,8 +91,8 @@ class ShowDocsContainer extends Component {
         console.log("res.status", res.status);
         console.log("res.data", res.data);
 
-      }).catch(() => {
-      console.log("MAP error");
+      }).catch((e) => {
+      console.log(e);
     });
 
     this.setState({
