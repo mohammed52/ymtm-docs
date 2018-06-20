@@ -17,12 +17,12 @@ const app = express();
  * - connect to MongoDB using mongoose
  * - register mongoose Schema
  */
-connect();
+// connect();
 
 /*
  * REMOVE if you do not need passport configuration
  */
-initPassport();
+// initPassport();
 
 if (isDebug) {
   // enable webpack hot module replacement
