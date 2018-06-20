@@ -6,10 +6,16 @@ export default () => {
     baseURL: apiEndpoint
   });
   return {
-    sendTestEmail: () => client.request({
-      method: 'GET',
-      url: '/testemail'
+    sendEmailWithDocs: ({data}) => client.request({
+      method: 'POST',
+      url: '/senddocstoemail',
+      data
     })
+  // ,
+  // sendTestEmail: () => client.request({
+  //   method: 'GET',
+  //   url: '/testemail'
+  // })
   };
 };
 

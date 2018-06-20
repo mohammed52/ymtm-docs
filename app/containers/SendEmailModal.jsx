@@ -36,7 +36,8 @@ class SendEmailModal extends Component {
             <FormControl type="text"
                          id="id-email"
                          onChange={this.props.onEmailChange}
-                         placeholder="youremail@xyz.com" />
+                         placeholder="youremail@xyz.com"
+                         value="mohammed.petiwala52@gmail.com" />
           </FormGroup>
         </Modal.Body>
         <Modal.Footer>

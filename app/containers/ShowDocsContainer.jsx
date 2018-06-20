@@ -12,6 +12,7 @@ import { DEFAULT_SETTINGS } from './helpers/defaultSettings'
 import SendEmailModal from './SendEmailModal'
 import EmailConfirmationModal from './EmailConfirmationModal'
 import { validateEmail } from './helpers/validateEmail'
+import { emailService } from '../services'
 
 import styles from '../css/components/showDocsStyles';
 
@@ -42,8 +43,8 @@ class ShowDocsContainer extends Component {
       applicationDetails: this.props.selectedOptions,
       showSendEmailModal: false,
       showEmailConfirmationModal: false,
-      email: "",
-      emailIsDiabled: true
+      email: "mohammed.petiwala52@gmail.com",
+      emailIsDiabled: false
     }
   }
 
@@ -73,6 +74,27 @@ class ShowDocsContainer extends Component {
 
   sendEmail() {
     console.log("sendEmail");
+    const data = {
+      email: 'mohammed.petiwala52@gmail.com',
+      doc: 'doc1'
+    };
+
+    const id = {
+      id: '123'
+    };
+
+    emailService().sendEmailWithDocs({
+      data
+    })
+      .then((res) => {
+        console.log("MAP response");
+        console.log("res.status", res.status);
+        console.log("res.data", res.data);
+
+      }).catch(() => {
+      console.log("MAP error");
+    });
+
     this.setState({
       showSendEmailModal: false,
       showEmailConfirmationModal: true

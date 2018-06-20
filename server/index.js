@@ -17,12 +17,12 @@ const app = express();
  * - connect to MongoDB using mongoose
  * - register mongoose Schema
  */
-// connect();
+connect();
 
 /*
  * REMOVE if you do not need passport configuration
  */
-// initPassport();
+initPassport();
 
 if (isDebug) {
   // enable webpack hot module replacement
@@ -50,7 +50,7 @@ initExpress(app);
  *
  * Note: Some of these routes have passport and database model dependencies
  */
-// initRoutes(app);
+initRoutes(app);
 
 /*
  * This is where the magic happens. We take the locals data we have already
@@ -59,11 +59,5 @@ initExpress(app);
  * HTML
  */
 app.get('*', renderMiddleware);
-
-// app._router.stack.forEach(function(r) {
-//   if (r.route && r.route.path) {
-//     console.log(r.route.path)
-//   }
-// })
 
 app.listen(app.get('port'));

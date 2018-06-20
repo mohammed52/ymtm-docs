@@ -2,9 +2,6 @@
 const nodemailer = require('nodemailer');
 
 export default (mailOptions) => {
-  console.log("MAP ok this is working");
-
-
   // Generate test SMTP service account from ethereal.email
   // Only needed if you don't have a real mail account for testing
   nodemailer.createTestAccount((err, account) => {
@@ -15,8 +12,8 @@ export default (mailOptions) => {
       port: 587,
       secure: false, // true for 465, false for other ports
       auth: {
-        user: process.env.SENDGRID_APIKEY, // generated ethereal user
-        pass: process.env.SENDGRID_PWD // generated ethereal password
+        user: process.env.SENDGRID_USERNAME, // generated ethereal user
+        pass: process.env.SENDGRID_PASSWORD // generated ethereal password
       }
     });
 

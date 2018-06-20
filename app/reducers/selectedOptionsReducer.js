@@ -8,20 +8,12 @@ let initialState = {
 };
 
 const selectedOptions = (state = initialState, action) => {
-  console.log("action.type", action.type);
-  console.log("action.payload", action.payload);
   switch (action.type) {
-
-
     case "SET_PURPOSE": {
-      console.log("action.type", action.type);
-      console.log("action.payload", action.payload);
-      console.log("state", state);
       let returnObj = {
         ...state,
         PURPOSE: action.payload
       }
-      console.log("returnObj", returnObj);
       return returnObj;
     }
     case "SET_SOURCE_OF_INCOME": {
