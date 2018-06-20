@@ -24,8 +24,6 @@ import { controllers } from '../db';
 //   return res.redirect('/');
 // }
 export function sendDocsToEmail(req, res) {
-  debugger;
-
   console.log("req.body", req.body);
   console.log("req.params", req.params);
 
