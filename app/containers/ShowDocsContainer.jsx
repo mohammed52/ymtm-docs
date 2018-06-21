@@ -75,12 +75,8 @@ class ShowDocsContainer extends Component {
   sendEmail() {
     console.log("sendEmail");
     const data = {
-      email: 'mohammed.petiwala52@gmail.com',
-      doc: 'doc1'
-    };
-
-    const id = {
-      id: '123'
+      email: this.state.email,
+      selectedOptions: this.props.selectedOptions
     };
 
     emailService().sendEmailWithDocs({

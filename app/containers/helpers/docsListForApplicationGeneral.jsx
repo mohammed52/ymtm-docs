@@ -1,4 +1,5 @@
 import { DEFAULT_SETTINGS } from './defaultSettings'
+import { DOC_LIST } from './docsList'
 
 export default function docsListForApplicationGeneral(applicationDetails) {
 
@@ -6,10 +7,9 @@ export default function docsListForApplicationGeneral(applicationDetails) {
 
   // for safai chitti
   if (applicationDetails.AMOUNT > 0) {
-    generalDocList.push({
-      docName: "Safai Chitti",
-      docTemplate: null
-    })
+    generalDocList.push(
+      DOC_LIST.DOC_SAFAI_CHITTI
+    )
   }
 
 
