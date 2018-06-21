@@ -1,4 +1,5 @@
 import { DEFAULT_SETTINGS } from './defaultSettings'
+import { DOCS_LIST } from './docsList'
 
 export default function docsListForApplicationSpecific(applicationDetails) {
 
@@ -6,79 +7,45 @@ export default function docsListForApplicationSpecific(applicationDetails) {
 
   // business expansion plan
   if (applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_EXISTING_BUSINESS) {
-    specificDocList.push({
-      docName: "Business Expansion Plan",
-      docTemplate: null
-    })
+    specificDocList.push(DOCS_LIST.DOC_BUSINESS_EXPANSION_PLAN)
   }
 
   // new business plan
   if (applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_NEW_BUSINESS) {
-    specificDocList.push({
-      docName: "New Business Plan",
-      docTemplate: null
-    })
+    specificDocList.push(DOCS_LIST.DOC_NEW_BUSINESS_PLAN)
   }
 
   // application for qardan hasana for ziarat
   if (applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_ZIARAT) {
-    specificDocList.push({
-      docName: "Application for Qardan Hasana for Ziarat",
-      docTemplate: null
-    })
-    specificDocList.push({
-      docName: "Copy of Ziarat Payment Challan / Quotation",
-      docTemplate: null
-    })
+    specificDocList.push(DOCS_LIST.DOC_APP_FOR_ZIARAT);
+
+    specificDocList.push(DOCS_LIST.DOC_ZIARAT_PAYMENT_CHALLAN);
   }
 
   if (applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_SCHOOL_UNI_FEES) {
-    specificDocList.push({
-      docName: "Application for Qardan Hasana for School / University Fees",
-      docTemplate: null
-    })
-    specificDocList.push({
-      docName: "Fee Bill",
-      docTemplate: null
-    })
+    specificDocList.push(DOCS_LIST.DOC_APP_FOR_FEES);
+
+    specificDocList.push(DOCS_LIST.DOC_FEE_BILL);
   }
 
   if (applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_PROPERTY_PURCHASE) {
-    specificDocList.push({
-      docName: "Application for Qardan Hasana for Property Purchase",
-      docTemplate: null
-    })
-    specificDocList.push({
-      docName: "Copy of Sale Deed for the property",
-      docTemplate: null
-    })
-    specificDocList.push({
-      docName: "Pictures of the property",
-      docTemplate: null
-    })
+    specificDocList.push(DOCS_LIST.DOC_APP_FOR_PROP);
+
+    specificDocList.push(DOCS_LIST.DOC_COPY_SALE_DEED);
+
+    specificDocList.push(DOCS_LIST.DOC_PROPERTY_PICTURES);
   }
 
 
   if (applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_CAR_MOTORCYCLE) {
-    specificDocList.push({
-      docName: "Application for Qardan Hasana for Car/Motorcycle",
-      docTemplate: null
-    })
-    specificDocList.push({
-      docName: "Quotation for car/motorcycle",
-      docTemplate: null
-    })
+    specificDocList.push(DOCS_LIST.DOC_APP_FOR_CAR_MOTORCYCLE);
+    specificDocList.push(DOCS_LIST.DOC_QUOTE_FOR_CAR_MOTORCYCLE);
   }
 
   if (applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_JAMAAT_WAJEBAAT_FMB_DUES) {
-    specificDocList.push({
-      docName: "Application for Qardan Hasana Jamaat/Wajebaat/FMB Dues",
-      docTemplate: null
-    })
-    specificDocList.push({
-      docName: "Jamaat Dues / FMB / Wajebaat Takhmeen Slip",
-      docTemplate: null
-    })
+    specificDocList.push(DOCS_LIST.DOC_APP_JAMAAT_DUES);
+
+    specificDocList.push(DOCS_LIST.DOC_JAMAAT_DUES_SLIP)
   }
 
   return specificDocList;
