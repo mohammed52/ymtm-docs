@@ -99,7 +99,7 @@ export const DOCS_LIST = {
     docTemplate: null
   },
   DOC_APP_FOR_CAR_MOTORCYCLE: {
-    docName: "Quotation for car/motorcycle",
+    docName: "Application for Qardan Hasana for Car/Motorcycle",
     docTemplate: null
   },
   DOC_QUOTE_FOR_CAR_MOTORCYCLE: {
