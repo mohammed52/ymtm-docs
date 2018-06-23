@@ -113,7 +113,11 @@ export const DOCS_LIST = {
   DOC_JAMAAT_DUES_SLIP: {
     docName: "Jamaat Dues / FMB / Wajebaat Takhmeen Slip",
     docTemplate: null
-  }
+  },
+  DOC_APP_FOR_HOME_RENOVATION: {
+    docName: "Application for Qardan Hasana for Home Renovation",
+    docTemplate: null
+  },
 
 
 }
