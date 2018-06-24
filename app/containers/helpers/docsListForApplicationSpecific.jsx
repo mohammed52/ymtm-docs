@@ -48,5 +48,9 @@ export default function docsListForApplicationSpecific(applicationDetails) {
     specificDocList.push(DOCS_LIST.DOC_JAMAAT_DUES_SLIP)
   }
 
+  if (applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_HOME_RENOVATION) {
+    specificDocList.push(DOCS_LIST.DOC_APP_FOR_HOME_RENOVATION);
+  }
+
   return specificDocList;
 }

@@ -38,15 +38,15 @@ export const DOCS_LIST = {
   },
   DOC_PERSONAL_EXPENSES: {
     docName: "Personal Expenses",
-    docTemplate: null
+    docTemplate: 'personalExpenses.xlsx'
   },
   DOC_FINANCIALS: {
     docName: "Financials (sheet # 6,7,8,9, Shk Burhanuddin Jasden)",
-    docTemplate: null
+    docTemplate: 'financials.xlsx'
   },
   DOC_NTN_RETURNS: {
     docName: "NTN returns for last 2 years (your company accountant)",
-    template: null
+    docTemplate: null
   },
   DOC_BUSINESS_BANK_STATEMENT: {
     docName: "Business Bank Statement for last 6 months",
@@ -54,25 +54,25 @@ export const DOCS_LIST = {
   },
   DOC_PERSONAL_BANK_STATEMENT: {
     docName: "Personal Bank Statement for last 6 months",
-    docTemplate: "null"
+    docTemplate: null
   },
   DOC_SALARY_SLIP: {
     docName: "Salary Slip for last month",
-    docTemplate: "null"
+    docTemplate: null
   },
   // specific docs
   DOC_BUSINESS_EXPANSION_PLAN: {
     docName: "Business Expansion Plan",
-    docTemplate: null
+    docTemplate: 'businessExpanPlan.docx'
   },
   DOC_NEW_BUSINESS_PLAN: {
     docName: "New Business Plan",
-    docTemplate: null
+    docTemplate: 'newBussPlan.docx'
   },
 
   DOC_APP_FOR_ZIARAT: {
     docName: "Application for Qardan Hasana for Ziarat",
-    docTemplate: null
+    docTemplate: 'AppZiarat.docx'
   },
   DOC_ZIARAT_PAYMENT_CHALLAN: {
     docName: "Copy of Ziarat Payment Challan / Quotation",
@@ -80,7 +80,7 @@ export const DOCS_LIST = {
   },
   DOC_APP_FOR_FEES: {
     docName: "Application for Qardan Hasana for School / University Fees",
-    docTemplate: null
+    docTemplate: 'AppFees.docx'
   },
   DOC_FEE_BILL: {
     docName: "Fee Bill",
@@ -88,7 +88,7 @@ export const DOCS_LIST = {
   },
   DOC_APP_FOR_PROP: {
     docName: "Application for Qardan Hasana for Property Purchase",
-    docTemplate: null
+    docTemplate: 'AppProperty.docx'
   },
   DOC_COPY_SALE_DEED: {
     docName: "Copy of Sale Deed for the property",
@@ -100,7 +100,7 @@ export const DOCS_LIST = {
   },
   DOC_APP_FOR_CAR_MOTORCYCLE: {
     docName: "Application for Qardan Hasana for Car/Motorcycle",
-    docTemplate: null
+    docTemplate: 'AppCarMotorcycle.docx'
   },
   DOC_QUOTE_FOR_CAR_MOTORCYCLE: {
     docName: "Quotation for car/motorcycle",
@@ -108,7 +108,7 @@ export const DOCS_LIST = {
   },
   DOC_APP_JAMAAT_DUES: {
     docName: "Application for Qardan Hasana Jamaat/Wajebaat/FMB Dues",
-    docTemplate: null
+    docTemplate: 'AppJammatDues.docx'
   },
   DOC_JAMAAT_DUES_SLIP: {
     docName: "Jamaat Dues / FMB / Wajebaat Takhmeen Slip",
@@ -116,7 +116,7 @@ export const DOCS_LIST = {
   },
   DOC_APP_FOR_HOME_RENOVATION: {
     docName: "Application for Qardan Hasana for Home Renovation",
-    docTemplate: null
+    docTemplate: 'AppHomeReno.docx'
   },
 
 

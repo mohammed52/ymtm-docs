@@ -76,14 +76,14 @@ class Home extends Component {
   }
 
   btnClickGetDocList() {
-// console.log("btnClickGetDocList");
-// const applicationDetails = {
-//   PURPOSE: this.state.PURPOSE,
-//   AMOUNT: this.state.AMOUNT,
-//   SOURCE_OF_INCOME: this.state.SOURCE_OF_INCOME,
-//   REPEAT_APPLY: this.state.REPEAT_APPLY
-// }
-// console.log("applicationDetails", applicationDetails);
+    // console.log("btnClickGetDocList");
+    // const applicationDetails = {
+    //   PURPOSE: this.state.PURPOSE,
+    //   AMOUNT: this.state.AMOUNT,
+    //   SOURCE_OF_INCOME: this.state.SOURCE_OF_INCOME,
+    //   REPEAT_APPLY: this.state.REPEAT_APPLY
+    // }
+    // console.log("applicationDetails", applicationDetails);
     browserHistory.push({
       pathname: '/showdocs'
     });
@@ -164,6 +164,14 @@ class Home extends Component {
                        value={DEFAULT_SETTINGS.PURPOSE.TAG_JAMAAT_WAJEBAAT_FMB_DUES}
                        checked={this.props.selectedOptions.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_JAMAAT_WAJEBAAT_FMB_DUES}>
                   Jamaat Dues / Wajebaat / Fmb
+                </Radio>
+                <br/>
+                <Radio inline
+                       name="PURPOSEOption"
+                       onChange={this.handlePurposeOptionChange}
+                       value={DEFAULT_SETTINGS.PURPOSE.TAG_HOME_RENOVATION}
+                       checked={this.props.selectedOptions.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_HOME_RENOVATION}>
+                  Home Renovation
                 </Radio>
               </FormGroup>
             </div>

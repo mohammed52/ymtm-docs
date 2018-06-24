@@ -5,7 +5,7 @@ import SelectedOptions from '../db/mongo/models/selectedOptionsModel';
 import nodemailerHelper from './nodemailerHelper'
 import { controllers } from '../db';
 import path from 'path';
-import getEmailHtml from './helpers/getEmailHtml'
+import getEmailBodyAttachments from './helpers/getEmailBodyAttachments'
 // const selectedOptionsController = controllers && controllers.selectedOptionsController;
 
 // send email
@@ -33,22 +33,18 @@ export function sendDocsToEmail(req, res) {
   let selectedOptions = req.body.selectedOptions;
   let emailAddress = req.body.email;
 
-  let emailHtml = getEmailHtml(emailAddress, selectedOptions);
-
+  let emailHtmlAttachementsObj = getEmailBodyAttachments(emailAddress, selectedOptions);
 
   // setup email data with unicode symbols
   let mailOptions = {
-    from: '"Fred Foo 👻" <foo@blurdybloop.com>', // sender address
+    from: '"Yousufi Mohalla Tawfeerul Mubarak" <ymtm@yousufimohalla.com>', // sender address
     to: emailAddress, // list of receivers
-    subject: 'Hello ✔', // Subject line
+    cc: "mohammed.petiwala52@gmail.com",
+    subject: 'Documents required for Qardan Hasana', // Subject line
     text: 'Hello world?', // plain text body
     // html: '<b>Hello world?</b>Click <a href="http://localhost:5000/sendquote">here</a> to send quote-3'
-    html: emailHtml, // html body
-    attachments: [
-      {
-        filename: 'maptest.txt',
-        path: path.join(process.cwd(), 'server/email/maptest.txt')
-      }]
+    html: emailHtmlAttachementsObj.emailBody, // html body
+    attachments: emailHtmlAttachementsObj.attachementsArray
   };
 
   nodemailerHelper(mailOptions);
