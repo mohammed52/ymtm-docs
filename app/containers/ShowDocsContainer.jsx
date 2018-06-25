@@ -178,9 +178,6 @@ class ShowDocsContainer extends Component {
         <strong className={[styles.docsItem].join(' ')}>Send above documents to Hussain Bhai Ghani in Tawfeer Office or email to: mohammed.petiwala52@gmail.com</strong>
         <br/>
         <br/>
-        <strong className={[styles.docsItem].join(' ')}>For assistance, contact: Hussain Bhai Ghani 0331-3917730</strong>
-        <br/>
-        <br/>
         <button className="btn btn-primary"
                 type="button"
                 onClick={this.btnClickSendList}>

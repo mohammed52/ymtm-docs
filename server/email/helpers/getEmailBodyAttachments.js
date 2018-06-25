@@ -24,7 +24,7 @@ export default function getEmailBodyAttachments(emailAddress, selectedOptions) {
   if (selectedOptions.REPEAT_APPLY === DEFAULT_SETTINGS.REPEAT_APPLY.TAG_FIRST_TIME_APPLY) {
     htmlReturnString += '<div>';
     htmlReturnString += '<br/>'
-    htmlReturnString += '<strong>Documents required for your profile(one time only):</strong>'
+    htmlReturnString += '<strong>Documents required for your online profile(one time only):</strong>'
 
     for (var k = 0; k < profileDocs.length; k++) {
       htmlReturnString += '<div>'
