@@ -253,6 +253,8 @@ class Home extends Component {
             Get Documents List!
           </button>
         </form>
+        <br/>
+        <br/>
       </div>
     );
   }

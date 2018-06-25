@@ -189,6 +189,8 @@ class ShowDocsContainer extends Component {
                 onClick={this.btnClickGoBack}>
           Go Back
         </button>
+        <br/>
+        <br/>
         <SendEmailModal show={this.state.showSendEmailModal}
                         onHide={this.closeSendEmailModal}
                         sendEmail={this.sendEmail}
