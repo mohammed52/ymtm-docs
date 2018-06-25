@@ -81,7 +81,7 @@ export default function getEmailBodyAttachments(emailAddress, selectedOptions) {
   htmlReturnString += '<strong>For assistance, Contact: Hussain Bhai Ghani 0331-3917730</strong>'
   htmlReturnString += '<br/>'
   htmlReturnString += '<br/>'
-  htmlReturnString += '<strong>Wasalaam,</strong>'
+  htmlReturnString += '<strong>Salaam,</strong>'
   htmlReturnString += '<div>Yousufi Mohalla Tawfeerul Mubarak</div>'
   htmlReturnString += '</div>'
 
