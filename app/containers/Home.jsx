@@ -107,7 +107,7 @@ class Home extends Component {
             <div className={[styles.optionCategory, "well"].join(' ')}>
               <FormGroup>
                 <ControlLabel>
-                  Select Qardan Hasana Purpose
+                  STEP-1: Select Qardan Hasana Purpose
                 </ControlLabel>
                 <br/>
                 <Radio inline
@@ -178,7 +178,7 @@ class Home extends Component {
             <div className={[styles.optionCategory, "well"].join(' ')}>
               <FormGroup>
                 <ControlLabel>
-                  Enter Amount
+                  STEP-2: Enter Amount
                 </ControlLabel>
                 <FormControl type="text"
                              defaultValue={this.props.selectedOptions.AMOUNT}
@@ -187,7 +187,7 @@ class Home extends Component {
               </FormGroup>
               <FormGroup>
                 <ControlLabel>
-                  Have you taken Qardan Hasana Before?
+                  STEP-3: Have you taken Qardan Hasana Before?
                 </ControlLabel>
                 <br/>
                 <Radio inline
@@ -210,7 +210,7 @@ class Home extends Component {
             <div className={[styles.optionCategory, "well"].join(' ')}>
               <FormGroup>
                 <ControlLabel>
-                  Your Source of Income
+                  STEP-4: Your Source of Income
                 </ControlLabel>
                 <br/>
                 <Radio inline
