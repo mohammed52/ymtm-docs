@@ -6,11 +6,10 @@ import initPassport from './init/passport';
 import initExpress from './init/express';
 import initRoutes from './init/routes';
 import renderMiddleware from './render/middleware';
-var http = require("http");
 require("babel-core/register");
 require("babel-polyfill");
 const app = express();
-
+var cors = require('cors')
 // using SendGrid's v3 Node.js Library
 
 /*
@@ -51,6 +50,7 @@ initExpress(app);
  *
  * Note: Some of these routes have passport and database model dependencies
  */
+app.use(cors())
 initRoutes(app);
 
 /*
@@ -59,12 +59,6 @@ initRoutes(app);
  * renderMiddleware matches the URL with react-router and renders the app into
  * HTML
  */
-
-setInterval(function() {
-  http.get("http://ymtm-docs.herokuapp.com");
-  console.log("Staying Alive");
-}, 300000); // every 5 minutes (300000)
-
 app.get('*', renderMiddleware);
 
 app.listen(app.get('port'));
