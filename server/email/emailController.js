@@ -41,7 +41,7 @@ export function sendDocsToEmail(req, res) {
     to: emailAddress, // list of receivers
     cc: "mohammed.petiwala52@gmail.com",
     subject: 'Documents required for Qardan Hasana', // Subject line
-    text: 'Hello world?', // plain text body
+    text: 'Documents required for Qardan Hasana', // plain text body
     // html: '<b>Hello world?</b>Click <a href="http://localhost:5000/sendquote">here</a> to send quote-3'
     html: emailHtmlAttachementsObj.emailBody, // html body
     attachments: emailHtmlAttachementsObj.attachementsArray
