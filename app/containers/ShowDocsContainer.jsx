@@ -128,9 +128,8 @@ class ShowDocsContainer extends Component {
     for (var i = 0; i < profileDocs.length; i++) {
       const sn = i + 1;
       divArrProfileDocList.push(
-        <div className={[styles.docsItem].join(' ')}
-             key={"divArrProfileDocList" + i}>
-          {sn + ". " + profileDocs[i].docName}
+        <div className={[styles.docsItem].join(' ')} key={"divArrProfileDocList" + i}>
+          {sn + ". " + profileDocs[i].docName + ' '}
         </div>
 
       )
@@ -140,9 +139,11 @@ class ShowDocsContainer extends Component {
     for (var j = 0; j < applicationDocsGeneral.length; j++) {
       const sn = j + 1;
       divArrGeneralDocList.push(
-        <div className={[styles.docsItem].join(' ')}
-             key={"divArrGeneralDocList" + j}>
-          {sn + ". " + applicationDocsGeneral[j].docName}
+        <div className={[styles.docsItem].join(' ')} key={"divArrGeneralDocList" + j}>
+          {sn + ". " + applicationDocsGeneral[j].docName + ' '}
+          {applicationDocsGeneral[j].docTemplate !== null ?
+           <strong><a href={"/docs/" + applicationDocsGeneral[j].docTemplate}>(download template)</a></strong>
+           : ''}
         </div>
 
       )
@@ -152,9 +153,11 @@ class ShowDocsContainer extends Component {
     for (var k = 0; k < applicationDocsSpecfic.length; k++) {
       const sn = k + 1 + j;
       divArrSpecificDocList.push(
-        <div className={[styles.docsItem].join(' ')}
-             key={"divArrSpecificDocList" + k}>
-          {sn + ". " + applicationDocsSpecfic[k].docName}
+        <div className={[styles.docsItem].join(' ')} key={"divArrSpecificDocList" + k}>
+          {sn + ". " + applicationDocsSpecfic[k].docName + ' '}
+          {applicationDocsSpecfic[k].docTemplate !== null ?
+           <strong><a href={"/docs/" + applicationDocsSpecfic[k].docTemplate}>(download template)</a></strong>
+           : ''}
         </div>
 
       )
@@ -178,15 +181,11 @@ class ShowDocsContainer extends Component {
         <strong className={[styles.docsItem].join(' ')}>Send above documents to Hussain Bhai Ghani in Tawfeer Office or email to: mohammed.petiwala52@gmail.com</strong>
         <br/>
         <br/>
-        <button className="btn btn-primary"
-                type="button"
-                onClick={this.btnClickSendList}>
+        <button className="btn btn-primary" type="button" onClick={this.btnClickSendList}>
           Send This List to my Email
         </button>
         <br/>
-        <button className="btn btn-default"
-                type="button"
-                onClick={this.btnClickGoBack}>
+        <button className="btn btn-default" type="button" onClick={this.btnClickGoBack}>
           Go Back
         </button>
         <br/>
@@ -196,10 +195,9 @@ class ShowDocsContainer extends Component {
                         sendEmail={this.sendEmail}
                         onEmailChange={this.onEmailChange}
                         emailIsDiabled={this.state.emailIsDiabled} />
-        <EmailConfirmationModal show={this.state.showEmailConfirmationModal}
-                                onHide={this.closeEmailConfirmationModal} />
+        <EmailConfirmationModal show={this.state.showEmailConfirmationModal} onHide={this.closeEmailConfirmationModal} />
       </div>
-    );
+      );
   }
 }
 

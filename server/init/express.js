@@ -30,6 +30,7 @@ export default (app) => {
   // app.use(cookieParser());
 
   app.use(express.static(path.join(process.cwd(), 'public')));
+  app.use(express.static(path.join(process.cwd(), 'public2')));
 
   // I am adding this here so that the Heroku deploy will work
   // Indicates the app is behind a front-facing proxy,
@@ -98,5 +99,6 @@ export default (app) => {
   // app.use(passport.session());
 
   app.use("/public", express.static(path.join(__dirname, 'public')));
+  console.log("__dirname", __dirname);
   app.use(flash());
 };
