@@ -26,12 +26,36 @@ export default function docsListForApplicationGeneral(applicationDetails) {
   }
 
   // personal expenses
-  if (applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_ZIARAT ||
+  if (applicationDetails.AMOUNT <= 500000 && (
+    applicationDetails.SOURCE_OF_INCOME === DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_JOB ||
+    applicationDetails.SOURCE_OF_INCOME === DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_HOME_BASED_INCOME_TUITION
+    ) &&
+    (
+    applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_ZIARAT ||
     applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_SCHOOL_UNI_FEES ||
     applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_PROPERTY_PURCHASE ||
     applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_CAR_MOTORCYCLE ||
     applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_JAMAAT_WAJEBAAT_FMB_DUES ||
-    applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_HOME_RENOVATION) {
+    applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_HOME_RENOVATION
+    )
+  ) {
+    generalDocList.push(DOCS_LIST.DOC_PERSONAL_EXPENSES)
+  }
+
+  // personal expenses second condition
+  if (applicationDetails.AMOUNT > 500000 && (
+    applicationDetails.SOURCE_OF_INCOME === DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_JOB ||
+    applicationDetails.SOURCE_OF_INCOME === DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_HOME_BASED_INCOME_TUITION
+    ) &&
+    (
+    applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_ZIARAT ||
+    applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_SCHOOL_UNI_FEES ||
+    applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_PROPERTY_PURCHASE ||
+    applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_CAR_MOTORCYCLE ||
+    applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_JAMAAT_WAJEBAAT_FMB_DUES ||
+    applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_HOME_RENOVATION
+    )
+  ) {
     generalDocList.push(DOCS_LIST.DOC_PERSONAL_EXPENSES)
   }
 
