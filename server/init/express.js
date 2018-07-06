@@ -98,7 +98,5 @@ export default (app) => {
   // app.use(passport.initialize());
   // app.use(passport.session());
 
-  app.use("/public", express.static(path.join(__dirname, 'public')));
-  console.log("__dirname", __dirname);
   app.use(flash());
 };
