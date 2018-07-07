@@ -72,6 +72,7 @@ export default function docsListForApplicationGeneral(applicationDetails) {
     ) &&
     (
     applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_EXISTING_BUSINESS ||
+    applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_NEW_BUSINESS ||
     applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_PROPERTY_PURCHASE
     )) {
     generalDocList.push(DOCS_LIST.DOC_FINANCIALS)
