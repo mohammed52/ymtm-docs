@@ -39,7 +39,7 @@ export default function getEmailBodyAttachments(emailAddress, selectedOptions) {
 
   }
   htmlReturnString += '<br/>'
-  htmlReturnString += '<strong>Documents required with your Application:</strong>'
+  htmlReturnString += '<strong>Documents required to be submitted with your Application:</strong>'
   let countAppDoc = 1;
   for (var i = 0; i < applicationDocsGeneral.length; i++) {
     htmlReturnString += '<div>'

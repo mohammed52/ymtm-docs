@@ -10,9 +10,7 @@ export default function docsListForProfile(applicationDetails) {
   }
 
   // for Partnership Deed
-  if (applicationDetails.SOURCE_OF_INCOME === DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_BUSINESS_PARTNERSHIP && (
-    applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_EXISTING_BUSINESS ||
-    applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_NEW_BUSINESS)) {
+  if (applicationDetails.SOURCE_OF_INCOME === DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_BUSINESS_PARTNERSHIP) {
     profileDocsList.push(DOCS_LIST.DOC_PARTNERSHIP_DEED);
 
     // its numbers of all partners

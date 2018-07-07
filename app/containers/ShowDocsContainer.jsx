@@ -168,12 +168,12 @@ class ShowDocsContainer extends Component {
         <div className={[styles.docsListWrapper, 'well'].join(' ')}>
           {this.props.selectedOptions.REPEAT_APPLY === DEFAULT_SETTINGS.REPEAT_APPLY.TAG_FIRST_TIME_APPLY ?
            <div>
-             <strong className={[styles.docsItem].join(' ')}>Documents required for your profile (one time only):</strong>
+             <strong className={[styles.docsItem].join(' ')}>Documents required for your online profile (one time only):</strong>
              <br/>
              {divArrProfileDocList}
              <br/>
            </div> : ''}
-          <strong className={[styles.docsItem].join(' ')}>Documents required with your Application:</strong>
+          <strong className={[styles.docsItem].join(' ')}>Documents required to be submitted with your Application:</strong>
           <br/>
           {divArrGeneralDocList}
           {divArrSpecificDocList}
