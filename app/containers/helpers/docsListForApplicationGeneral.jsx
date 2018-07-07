@@ -28,7 +28,9 @@ export default function docsListForApplicationGeneral(applicationDetails) {
   // personal expenses
   if (applicationDetails.AMOUNT <= 1000000 && (
     applicationDetails.SOURCE_OF_INCOME === DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_JOB ||
-    applicationDetails.SOURCE_OF_INCOME === DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_HOME_BASED_INCOME_TUITION
+    applicationDetails.SOURCE_OF_INCOME === DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_HOME_BASED_INCOME_TUITION ||
+    applicationDetails.SOURCE_OF_INCOME === DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_BUSINESS_SOLE_PROP ||
+    applicationDetails.SOURCE_OF_INCOME === DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_BUSINESS_PARTNERSHIP
     ) &&
     (
     applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_ZIARAT ||
@@ -36,7 +38,9 @@ export default function docsListForApplicationGeneral(applicationDetails) {
     applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_PROPERTY_PURCHASE ||
     applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_CAR_MOTORCYCLE ||
     applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_JAMAAT_WAJEBAAT_FMB_DUES ||
-    applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_HOME_RENOVATION
+    applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_HOME_RENOVATION ||
+    applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_NEW_BUSINESS ||
+    applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_EXISTING_BUSINESS
     )
   ) {
     generalDocList.push(DOCS_LIST.DOC_PERSONAL_EXPENSES)
@@ -96,6 +100,7 @@ export default function docsListForApplicationGeneral(applicationDetails) {
     applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_PROPERTY_PURCHASE ||
     applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_CAR_MOTORCYCLE ||
     applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_JAMAAT_WAJEBAAT_FMB_DUES ||
+    applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_NEW_BUSINESS ||
     applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_HOME_RENOVATION
   ) {
     generalDocList.push(DOCS_LIST.DOC_PERSONAL_BANK_STATEMENT)
