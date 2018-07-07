@@ -26,7 +26,7 @@ export default function docsListForApplicationGeneral(applicationDetails) {
   }
 
   // personal expenses
-  if (applicationDetails.AMOUNT <= 500000 && (
+  if (applicationDetails.AMOUNT <= 1000000 && (
     applicationDetails.SOURCE_OF_INCOME === DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_JOB ||
     applicationDetails.SOURCE_OF_INCOME === DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_HOME_BASED_INCOME_TUITION
     ) &&
@@ -43,7 +43,7 @@ export default function docsListForApplicationGeneral(applicationDetails) {
   }
 
   // personal expenses second condition
-  if (applicationDetails.AMOUNT > 500000 && (
+  if (applicationDetails.AMOUNT > 1000000 && (
     applicationDetails.SOURCE_OF_INCOME === DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_JOB ||
     applicationDetails.SOURCE_OF_INCOME === DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_HOME_BASED_INCOME_TUITION
     ) &&
@@ -61,7 +61,7 @@ export default function docsListForApplicationGeneral(applicationDetails) {
 
   // financials
   if (
-    applicationDetails.AMOUNT > 500000 &&
+    applicationDetails.AMOUNT > 1000000 &&
     (
     applicationDetails.SOURCE_OF_INCOME === DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_BUSINESS_SOLE_PROP ||
     applicationDetails.SOURCE_OF_INCOME === DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_BUSINESS_PARTNERSHIP
@@ -74,7 +74,9 @@ export default function docsListForApplicationGeneral(applicationDetails) {
   }
 
   // NTN returns for last two years
-  if ((applicationDetails.SOURCE_OF_INCOME === DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_BUSINESS_PARTNERSHIP ||
+  if (
+    applicationDetails.AMOUNT > 1000000 &&
+    (applicationDetails.SOURCE_OF_INCOME === DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_BUSINESS_PARTNERSHIP ||
     applicationDetails.SOURCE_OF_INCOME === DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_BUSINESS_SOLE_PROP) &&
     applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_EXISTING_BUSINESS) {
 
