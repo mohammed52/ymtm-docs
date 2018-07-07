@@ -77,7 +77,7 @@ export default function docsListForApplicationGeneral(applicationDetails) {
     )) {
     generalDocList.push(DOCS_LIST.DOC_FINANCIALS)
   }
-
+  // test comment
   // NTN returns for last two years
   if (
     applicationDetails.AMOUNT > 1000000 &&
