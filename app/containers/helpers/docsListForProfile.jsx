@@ -18,15 +18,16 @@ export default function docsListForProfile(applicationDetails) {
   }
 
   // Business NTN certificate
-  if (applicationDetails.AMOUNT >= 300000 &&
+  if (applicationDetails.AMOUNT > 500000 &&
     (applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_EXISTING_BUSINESS ||
     applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_NEW_BUSINESS)) {
     profileDocsList.push(DOCS_LIST.DOC_BUSINESS_NTN);
   }
 
   // business bank account cheque copy
-  if (applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_EXISTING_BUSINESS ||
-    applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_NEW_BUSINESS) {
+  if (applicationDetails.AMOUNT > 500000 &&
+    (applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_EXISTING_BUSINESS ||
+    applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_NEW_BUSINESS)) {
     profileDocsList.push(DOCS_LIST.DOC_BUSINESS_CHEQUE);
   }
 
