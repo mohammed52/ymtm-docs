@@ -1,10 +1,10 @@
-import { DEFAULT_SETTINGS } from './defaultSettings'
+import { DEFAULT_SETTINGS } from "./defaultSettings";
 
 // purpose amount source of income and defaulet settings are different from docs list
 export const DOCS_LIST = {
   // DOCS FOR PROFILE
   DOC_CNIC_COPY: {
-    docName: "CNIC Copy",
+    docName: "CNIC Copy"
   },
   DOC_PARTNERSHIP_DEED: {
     docName: "Partnership Deed of Business (For partnership business)"
@@ -22,27 +22,28 @@ export const DOCS_LIST = {
     docName: "Personal Bank Account Cheque Copy"
   },
 
-
   // GENERAL APPLICATION DOCS
   DOC_SAFAI_CHITTI: {
     docName: "Safai Chitti",
     docTemplate: null
   },
   DOC_GUARANTOR_CNIC_2: {
-    docName: "CNIC Copies and ITS Numbers of 02 Guarantors (Yousufi Mohalla Only)",
-    docTemplate: null,
+    docName:
+      "CNIC Copies and ITS Numbers of 02 Guarantors (Yousufi Mohalla Only)",
+    docTemplate: null
   },
   DOC_GUARANTOR_CNIC_3: {
-    docName: "CNIC Copies and ITS Numbers of 03 Guarantors (Yousufi Mohalla Only)",
-    docTemplate: null,
+    docName:
+      "CNIC Copies and ITS Numbers of 03 Guarantors (Yousufi Mohalla Only)",
+    docTemplate: null
   },
   DOC_PERSONAL_EXPENSES: {
     docName: "Personal Expenses",
-    docTemplate: 'personalExpenses.xlsx'
+    docTemplate: "personalExpenses.xlsx"
   },
   DOC_FINANCIALS: {
     docName: "Financials (sheet # 6,7,8,9, Shk Burhanuddin Jasden)",
-    docTemplate: 'financials.xlsx'
+    docTemplate: "financials.xlsx"
   },
   DOC_NTN_RETURNS: {
     docName: "NTN returns for last 2 years (your company accountant)",
@@ -63,16 +64,16 @@ export const DOCS_LIST = {
   // specific docs
   DOC_BUSINESS_EXPANSION_PLAN: {
     docName: "Business Expansion Plan",
-    docTemplate: 'businessExpanPlan.docx'
+    docTemplate: "businessExpanPlan.docx"
   },
   DOC_NEW_BUSINESS_PLAN: {
     docName: "New Business Plan",
-    docTemplate: 'newBussPlan.docx'
+    docTemplate: "newBussPlan.docx"
   },
 
   DOC_APP_FOR_ZIARAT: {
     docName: "Application for Qardan Hasana for Ziarat",
-    docTemplate: 'AppZiarat.docx'
+    docTemplate: "AppZiarat.docx"
   },
   DOC_ZIARAT_PAYMENT_CHALLAN: {
     docName: "Copy of Ziarat Payment Challan / Quotation",
@@ -80,7 +81,7 @@ export const DOCS_LIST = {
   },
   DOC_APP_FOR_FEES: {
     docName: "Application for Qardan Hasana for School / University Fees",
-    docTemplate: 'AppFees.docx'
+    docTemplate: "AppFees.docx"
   },
   DOC_FEE_BILL: {
     docName: "Fee Bill",
@@ -88,7 +89,7 @@ export const DOCS_LIST = {
   },
   DOC_APP_FOR_PROP: {
     docName: "Application for Qardan Hasana for Property Purchase",
-    docTemplate: 'AppProperty.docx'
+    docTemplate: "AppProperty.docx"
   },
   DOC_COPY_SALE_DEED: {
     docName: "Copy of Sale Deed for the property",
@@ -100,7 +101,7 @@ export const DOCS_LIST = {
   },
   DOC_APP_FOR_CAR_MOTORCYCLE: {
     docName: "Application for Qardan Hasana for Car/Motorcycle",
-    docTemplate: 'AppCarMotorcycle.docx'
+    docTemplate: "AppCarMotorcycle.docx"
   },
   DOC_QUOTE_FOR_CAR_MOTORCYCLE: {
     docName: "Quotation for car/motorcycle",
@@ -108,7 +109,7 @@ export const DOCS_LIST = {
   },
   DOC_APP_JAMAAT_DUES: {
     docName: "Application for Qardan Hasana Jamaat/Wajebaat/FMB Dues",
-    docTemplate: 'AppJammatDues.docx'
+    docTemplate: "AppJammatDues.docx"
   },
   DOC_JAMAAT_DUES_SLIP: {
     docName: "Jamaat Dues / FMB / Wajebaat Takhmeen Slip",
@@ -116,8 +117,10 @@ export const DOCS_LIST = {
   },
   DOC_APP_FOR_HOME_RENOVATION: {
     docName: "Application for Qardan Hasana for Home Renovation",
-    docTemplate: 'AppHomeReno.docx'
+    docTemplate: "AppHomeReno.docx"
   },
-
-
-}
+  DOC_APP_FOR_TRAVEL: {
+    docName: "Application for Qardan Hasana for Travel",
+    docTemplate: "AppTravel.docx"
+  }
+};

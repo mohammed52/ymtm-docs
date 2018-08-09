@@ -1,5 +1,5 @@
-import { DEFAULT_SETTINGS } from './defaultSettings'
-import { DOCS_LIST } from './docsList'
+import { DEFAULT_SETTINGS } from "./defaultSettings";
+import { DOCS_LIST } from "./docsList";
 
 export default function docsListForProfile(applicationDetails) {
   let profileDocsList = [];
@@ -10,7 +10,10 @@ export default function docsListForProfile(applicationDetails) {
   }
 
   // for Partnership Deed
-  if (applicationDetails.SOURCE_OF_INCOME === DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_BUSINESS_PARTNERSHIP) {
+  if (
+    applicationDetails.SOURCE_OF_INCOME ===
+    DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_BUSINESS_PARTNERSHIP
+  ) {
     profileDocsList.push(DOCS_LIST.DOC_PARTNERSHIP_DEED);
 
     // its numbers of all partners
@@ -18,30 +21,41 @@ export default function docsListForProfile(applicationDetails) {
   }
 
   // Business NTN certificate
-  if (applicationDetails.AMOUNT > 500000 &&
-    (applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_EXISTING_BUSINESS ||
-    applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_NEW_BUSINESS)) {
+  if (
+    applicationDetails.AMOUNT > 500000 &&
+    (applicationDetails.PURPOSE ===
+      DEFAULT_SETTINGS.PURPOSE.TAG_EXISTING_BUSINESS ||
+      applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_NEW_BUSINESS)
+  ) {
     profileDocsList.push(DOCS_LIST.DOC_BUSINESS_NTN);
   }
 
   // business bank account cheque copy
-  if (applicationDetails.AMOUNT > 500000 &&
-    (applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_EXISTING_BUSINESS ||
-    applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_NEW_BUSINESS)) {
+  if (
+    applicationDetails.AMOUNT > 500000 &&
+    (applicationDetails.PURPOSE ===
+      DEFAULT_SETTINGS.PURPOSE.TAG_EXISTING_BUSINESS ||
+      applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_NEW_BUSINESS)
+  ) {
     profileDocsList.push(DOCS_LIST.DOC_BUSINESS_CHEQUE);
   }
 
   // personal bank account cheque copy
-  if (applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_ZIARAT ||
-    applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_SCHOOL_UNI_FEES ||
-    applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_PROPERTY_PURCHASE ||
-    applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_CAR_MOTORCYCLE ||
-    applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_JAMAAT_WAJEBAAT_FMB_DUES ||
+  if (
+    applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_ZIARAT ||
+    applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_TRAVEL ||
+    applicationDetails.PURPOSE ===
+      DEFAULT_SETTINGS.PURPOSE.TAG_SCHOOL_UNI_FEES ||
+    applicationDetails.PURPOSE ===
+      DEFAULT_SETTINGS.PURPOSE.TAG_PROPERTY_PURCHASE ||
+    applicationDetails.PURPOSE ===
+      DEFAULT_SETTINGS.PURPOSE.TAG_CAR_MOTORCYCLE ||
+    applicationDetails.PURPOSE ===
+      DEFAULT_SETTINGS.PURPOSE.TAG_JAMAAT_WAJEBAAT_FMB_DUES ||
     applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_HOME_RENOVATION
   ) {
     profileDocsList.push(DOCS_LIST.DOC_PERSONAL_CHEQUE);
   }
-
 
   return profileDocsList;
 }
