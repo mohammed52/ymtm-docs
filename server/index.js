@@ -6,7 +6,7 @@ import initPassport from "./init/passport";
 import initExpress from "./init/express";
 import initRoutes from "./init/routes";
 import renderMiddleware from "./render/middleware";
-var http = require("http");
+
 require("babel-core/register");
 require("babel-polyfill");
 const app = express();
@@ -64,9 +64,10 @@ initRoutes(app);
  */
 app.get("*", renderMiddleware);
 
+//keep heroku alive, ping at 5 min mark
 setInterval(() => {
   console.log("ymtm-docs pinging...");
-  http.get("https://ymtm-docs.herokuapp.com");
+  app.get("https://ymtm-docs.herokuapp.com");
 }, 300000); // every 5 minutes (300000)
 
 app.listen(app.get("port"));
