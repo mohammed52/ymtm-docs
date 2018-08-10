@@ -42,17 +42,23 @@ export default function docsListForProfile(applicationDetails) {
 
   // personal bank account cheque copy
   if (
-    applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_ZIARAT ||
-    applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_TRAVEL ||
-    applicationDetails.PURPOSE ===
-      DEFAULT_SETTINGS.PURPOSE.TAG_SCHOOL_UNI_FEES ||
-    applicationDetails.PURPOSE ===
-      DEFAULT_SETTINGS.PURPOSE.TAG_PROPERTY_PURCHASE ||
-    applicationDetails.PURPOSE ===
-      DEFAULT_SETTINGS.PURPOSE.TAG_CAR_MOTORCYCLE ||
-    applicationDetails.PURPOSE ===
-      DEFAULT_SETTINGS.PURPOSE.TAG_JAMAAT_WAJEBAAT_FMB_DUES ||
-    applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_HOME_RENOVATION
+    applicationDetails.AMOUNT <= 500000 &&
+    (applicationDetails.PURPOSE ===
+      DEFAULT_SETTINGS.PURPOSE.TAG_EXISTING_BUSINESS ||
+      applicationDetails.PURPOSE ===
+        DEFAULT_SETTINGS.PURPOSE.TAG_NEW_BUSINESS ||
+      applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_ZIARAT ||
+      applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_TRAVEL ||
+      applicationDetails.PURPOSE ===
+        DEFAULT_SETTINGS.PURPOSE.TAG_SCHOOL_UNI_FEES ||
+      applicationDetails.PURPOSE ===
+        DEFAULT_SETTINGS.PURPOSE.TAG_PROPERTY_PURCHASE ||
+      applicationDetails.PURPOSE ===
+        DEFAULT_SETTINGS.PURPOSE.TAG_CAR_MOTORCYCLE ||
+      applicationDetails.PURPOSE ===
+        DEFAULT_SETTINGS.PURPOSE.TAG_JAMAAT_WAJEBAAT_FMB_DUES ||
+      applicationDetails.PURPOSE ===
+        DEFAULT_SETTINGS.PURPOSE.TAG_HOME_RENOVATION)
   ) {
     profileDocsList.push(DOCS_LIST.DOC_PERSONAL_CHEQUE);
   }
