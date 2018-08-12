@@ -65,9 +65,15 @@ initRoutes(app);
 app.get("*", renderMiddleware);
 
 //keep heroku alive, ping at 5 min mark
+// setInterval(() => {
+//   console.log("ymtm-docs pinging...");
+//   app.get("https://ymtm-docs.herokuapp.com");
+// }, 300000); // every 5 minutes (300000)
+
+var http = require("http");
 setInterval(() => {
-  console.log("ymtm-docs pinging...");
-  app.get("https://ymtm-docs.herokuapp.com");
-}, 300000); // every 5 minutes (300000)
+  http.get("http://ymtm-docs.herokuapp.com");
+  console.log("remote call");
+}, 30000); // every 5 minutes (300000)
 
 app.listen(app.get("port"));
