@@ -74,6 +74,6 @@ var http = require("http");
 setInterval(() => {
   http.get("http://ymtm-docs.herokuapp.com");
   console.log("remote call");
-}, 30000); // every 5 minutes (300000)
+}, 300000); // every 5 minutes (300000)
 
 app.listen(app.get("port"));
