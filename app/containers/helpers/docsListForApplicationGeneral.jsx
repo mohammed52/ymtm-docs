@@ -33,18 +33,19 @@ export default function docsListForApplicationGeneral(applicationDetails) {
     DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_BUSINESS_SOLE_PROP ||
     applicationDetails.SOURCE_OF_INCOME ===
     DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_BUSINESS_PARTNERSHIP) &&
-    (applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_ZIARAT ||
+    (
+    applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_ZIARAT ||
     applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_TRAVEL ||
     applicationDetails.PURPOSE ===
     DEFAULT_SETTINGS.PURPOSE.TAG_SCHOOL_UNI_FEES ||
-    applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_ZIARAT ||
-    applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_TRAVEL ||
     applicationDetails.PURPOSE ===
     DEFAULT_SETTINGS.PURPOSE.TAG_PROPERTY_PURCHASE ||
     applicationDetails.PURPOSE ===
     DEFAULT_SETTINGS.PURPOSE.TAG_CAR_MOTORCYCLE ||
     applicationDetails.PURPOSE ===
     DEFAULT_SETTINGS.PURPOSE.TAG_JAMAAT_WAJEBAAT_FMB_DUES ||
+    applicationDetails.PURPOSE ===
+    DEFAULT_SETTINGS.PURPOSE.TAG_PERSONAL_WEDDING ||
     applicationDetails.PURPOSE ===
     DEFAULT_SETTINGS.PURPOSE.TAG_HOME_RENOVATION ||
     applicationDetails.PURPOSE ===
@@ -68,6 +69,8 @@ export default function docsListForApplicationGeneral(applicationDetails) {
     applicationDetails.PURPOSE ===
     DEFAULT_SETTINGS.PURPOSE.TAG_PROPERTY_PURCHASE ||
     applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_TRAVEL ||
+    applicationDetails.PURPOSE ===
+    DEFAULT_SETTINGS.PURPOSE.TAG_PERSONAL_WEDDING ||
     applicationDetails.PURPOSE ===
     DEFAULT_SETTINGS.PURPOSE.TAG_CAR_MOTORCYCLE ||
     applicationDetails.PURPOSE ===
@@ -125,6 +128,8 @@ export default function docsListForApplicationGeneral(applicationDetails) {
     DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_HOME_BASED_INCOME_TUITION ||
     applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_ZIARAT ||
     applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_TRAVEL ||
+    applicationDetails.PURPOSE ===
+    DEFAULT_SETTINGS.PURPOSE.TAG_PERSONAL_WEDDING ||
     applicationDetails.PURPOSE ===
     DEFAULT_SETTINGS.PURPOSE.TAG_SCHOOL_UNI_FEES ||
     applicationDetails.PURPOSE ===

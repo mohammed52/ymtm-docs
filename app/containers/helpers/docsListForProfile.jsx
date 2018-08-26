@@ -58,7 +58,10 @@ export default function docsListForProfile(applicationDetails) {
     applicationDetails.PURPOSE ===
     DEFAULT_SETTINGS.PURPOSE.TAG_JAMAAT_WAJEBAAT_FMB_DUES ||
     applicationDetails.PURPOSE ===
-    DEFAULT_SETTINGS.PURPOSE.TAG_HOME_RENOVATION)
+    DEFAULT_SETTINGS.PURPOSE.TAG_HOME_RENOVATION ||
+    applicationDetails.PURPOSE ===
+    DEFAULT_SETTINGS.PURPOSE.TAG_PERSONAL_WEDDING
+    )
   ) {
     profileDocsList.push(DOCS_LIST.DOC_PERSONAL_CHEQUE);
   }
@@ -78,7 +81,10 @@ export default function docsListForProfile(applicationDetails) {
     applicationDetails.PURPOSE ===
     DEFAULT_SETTINGS.PURPOSE.TAG_JAMAAT_WAJEBAAT_FMB_DUES ||
     applicationDetails.PURPOSE ===
-    DEFAULT_SETTINGS.PURPOSE.TAG_HOME_RENOVATION)
+    DEFAULT_SETTINGS.PURPOSE.TAG_HOME_RENOVATION ||
+    applicationDetails.PURPOSE ===
+    DEFAULT_SETTINGS.PURPOSE.TAG_PERSONAL_WEDDING
+    )
   ) {
     profileDocsList.push(DOCS_LIST.DOC_PERSONAL_CHEQUE);
   }

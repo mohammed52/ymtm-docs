@@ -29,6 +29,10 @@ export default function docsListForApplicationSpecific(applicationDetails) {
   if (applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_TRAVEL) {
     specificDocList.push(DOCS_LIST.DOC_APP_FOR_TRAVEL);
   }
+  // application for qardan hasana for PERSONAL / TRAVEL
+  if (applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_PERSONAL_WEDDING) {
+    specificDocList.push(DOCS_LIST.DOC_APP_FOR_PERSONAL_WEDDING);
+  }
 
   if (
     applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_SCHOOL_UNI_FEES
