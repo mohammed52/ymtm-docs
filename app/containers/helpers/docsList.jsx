@@ -28,11 +28,13 @@ export const DOCS_LIST = {
     docTemplate: null
   },
   DOC_GUARANTOR_CNIC_2: {
-    docName: "CNIC Copies and ITS Numbers of 02 Guarantors (Yousufi Mohalla Only)",
+    docName:
+      "CNIC Copies and ITS Numbers of 02 Guarantors (Yousufi Mohalla Only)",
     docTemplate: null
   },
   DOC_GUARANTOR_CNIC_3: {
-    docName: "CNIC Copies and ITS Numbers of 03 Guarantors (Yousufi Mohalla Only)",
+    docName:
+      "CNIC Copies and ITS Numbers of 03 Guarantors (Yousufi Mohalla Only)",
     docTemplate: null
   },
   DOC_PERSONAL_EXPENSES: {
@@ -40,7 +42,8 @@ export const DOCS_LIST = {
     docTemplate: "personalExpenses.xlsx"
   },
   DOC_FINANCIALS: {
-    docName: "Financials (sheet # 6,7,8,9, Shk Burhanuddin Jasden)",
+    docName:
+      "Financials (sheet # 6,7,8,9, Shk Burhanuddin Jasden 0345-2525252)",
     docTemplate: "financials.xlsx"
   },
   DOC_NTN_RETURNS: {
