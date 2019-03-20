@@ -61,7 +61,21 @@ export default function docsListForApplicationGeneral(applicationDetails) {
         DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_BUSINESS_PARTNERSHIP) &&
     (applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_NEW_BUSINESS ||
       applicationDetails.PURPOSE ===
-        DEFAULT_SETTINGS.PURPOSE.TAG_EXISTING_BUSINESS)
+        DEFAULT_SETTINGS.PURPOSE.TAG_EXISTING_BUSINESS ||
+      applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_ZIARAT ||
+      applicationDetails.PURPOSE === DEFAULT_SETTINGS.PURPOSE.TAG_TRAVEL ||
+      applicationDetails.PURPOSE ===
+        DEFAULT_SETTINGS.PURPOSE.TAG_SCHOOL_UNI_FEES ||
+      applicationDetails.PURPOSE ===
+        DEFAULT_SETTINGS.PURPOSE.TAG_PROPERTY_PURCHASE ||
+      applicationDetails.PURPOSE ===
+        DEFAULT_SETTINGS.PURPOSE.TAG_CAR_MOTORCYCLE ||
+      applicationDetails.PURPOSE ===
+        DEFAULT_SETTINGS.PURPOSE.TAG_JAMAAT_WAJEBAAT_FMB_DUES ||
+      applicationDetails.PURPOSE ===
+        DEFAULT_SETTINGS.PURPOSE.TAG_PERSONAL_WEDDING ||
+      applicationDetails.PURPOSE ===
+        DEFAULT_SETTINGS.PURPOSE.TAG_HOME_RENOVATION)
   ) {
     generalDocList.push(DOCS_LIST.DOC_PERSONAL_EXPENSES);
   }
