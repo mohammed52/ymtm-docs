@@ -96,10 +96,10 @@ export default function getEmailBodyAttachments(emailAddress, selectedOptions) {
   }
   htmlReturnString += "<br/>";
   htmlReturnString +=
-    "<div>Send above documents to Ali Haider Bhai in Tawfeer Office or email to: mohammed.petiwala52@gmail.com</div>";
+    "<div>Send above documents to Adnan Adil Bhai +92-332-3464021 in Tawfeer Office or email to: ymtm@yousufimohallah.com</div>";
   htmlReturnString += "<br/>";
   htmlReturnString +=
-    "<strong>For assistance, Contact: Ali Haider Bhai 0335-0270252</strong>";
+    "<strong>For assistance, Contact: Adnan Adil Bhai +92-332-3464021</strong>";
   htmlReturnString += "<br/>";
   htmlReturnString += "<br/>";
   htmlReturnString += "<strong>Salaam,</strong>";

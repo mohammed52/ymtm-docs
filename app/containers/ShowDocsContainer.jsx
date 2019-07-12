@@ -208,8 +208,8 @@ class ShowDocsContainer extends Component {
           {divArrSpecificDocList}
         </div>
         <strong className={[styles.docsItem].join(" ")}>
-          Send above documents to Ali Haider Bhai 0335-0270252 in Tawfeer Office
-          or email to: mohammed.petiwala52@gmail.com
+          Send above documents to Adnan Adil Bhai +92-332-3464021 in Tawfeer
+          Office or email to: ymtm@yousufimohallah.com
         </strong>
         <br />
         <br />
