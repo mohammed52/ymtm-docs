@@ -135,7 +135,7 @@ export default function docsListForApplicationGeneral(applicationDetails) {
           DEFAULT_SETTINGS.PURPOSE.TAG_NEW_BUSINESS ||
         applicationDetails.PURPOSE ===
           DEFAULT_SETTINGS.PURPOSE.TAG_HOME_RENOVATION)) ||
-    applicationDetails.AMOUNT <= 500000
+    applicationDetails.AMOUNT < 500000
   ) {
     generalDocList.push(DOCS_LIST.DOC_PERSONAL_BANK_STATEMENT);
   }
