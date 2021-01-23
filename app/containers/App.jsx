@@ -66,7 +66,7 @@ class App extends Component {
             <div className={styles.headerWrapper2}>
               <div className={styles.headerWrapper}>
                 <img src={ymtm} width="90" height="90" className="img-fluid" />
-                <strong>Helpline: 0300-2182932</strong>
+                <strong> Helpline: 0300-2182932</strong>
               </div>
             </div>
             {this.props.children}
