@@ -22,9 +22,17 @@ export default function docsListForApplicationGeneral(applicationDetails) {
     generalDocList.push(DOCS_LIST.DOC_GUARANTOR_CNIC_3);
   }
 
+  // cnic copies of 4 guarantors
+  if (
+    applicationDetails.AMOUNT > 2500000 &&
+    applicationDetails.AMOUNT <= 5000001
+  ) {
+    generalDocList.push(DOCS_LIST.DOC_GUARANTOR_CNIC_4);
+  }
+
   // personal expenses
   if (
-    applicationDetails.AMOUNT <= 2500000 &&
+    applicationDetails.AMOUNT <= 5000001 &&
     applicationDetails.AMOUNT >= 1000000 &&
     (applicationDetails.SOURCE_OF_INCOME ===
       DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_JOB ||

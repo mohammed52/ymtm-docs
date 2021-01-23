@@ -4,128 +4,133 @@ import { DEFAULT_SETTINGS } from "./defaultSettings";
 export const DOCS_LIST = {
   // DOCS FOR PROFILE
   DOC_CNIC_COPY: {
-    docName: "CNIC Copy"
+    docName: "CNIC Copy",
   },
   DOC_PARTNERSHIP_DEED: {
-    docName: "Partnership Deed of Business (For partnership business)"
+    docName: "Partnership Deed of Business (For partnership business)",
   },
   DOC_ITS_BUSINESS_PARTNERS: {
-    docName: "ITS Numbers of All Business Partners (For partnership business)"
+    docName: "ITS Numbers of All Business Partners (For partnership business)",
   },
   DOC_BUSINESS_NTN: {
-    docName: "Business NTN Certificate"
+    docName: "Business NTN Certificate",
   },
   DOC_BUSINESS_CHEQUE: {
-    docName: "Business Bank Account Cheque Copy"
+    docName: "Business Bank Account Cheque Copy",
   },
   DOC_PERSONAL_CHEQUE: {
-    docName: "Personal Bank Account Cheque Copy"
+    docName: "Personal Bank Account Cheque Copy",
   },
 
   // GENERAL APPLICATION DOCS
   DOC_SAFAI_CHITTI: {
     docName: "Safai Chitti",
-    docTemplate: null
+    docTemplate: null,
   },
   DOC_GUARANTOR_CNIC_2: {
     docName:
       "CNIC Copies and ITS Numbers of 02 Guarantors (Yousufi Mohalla Only)",
-    docTemplate: null
+    docTemplate: null,
   },
   DOC_GUARANTOR_CNIC_3: {
     docName:
       "CNIC Copies and ITS Numbers of 03 Guarantors (Yousufi Mohalla Only)",
-    docTemplate: null
+    docTemplate: null,
+  },
+  DOC_GUARANTOR_CNIC_4: {
+    docName:
+      "CNIC Copies and ITS Numbers of 04 Guarantors (Yousufi Mohalla Only)",
+    docTemplate: null,
   },
   DOC_PERSONAL_EXPENSES: {
     docName: "Personal Expenses",
-    docTemplate: "personalExpenses.xlsx"
+    docTemplate: "personalExpenses.xlsx",
   },
   DOC_FINANCIALS: {
     docName:
       "Financials (sheet # 6,7,8,9, Shk Burhanuddin Jasden 0345-2525252)",
-    docTemplate: "financials.xlsx"
+    docTemplate: "financials.xlsx",
   },
   DOC_NTN_RETURNS: {
     docName: "NTN returns for last 2 years (your company accountant)",
-    docTemplate: null
+    docTemplate: null,
   },
   DOC_BUSINESS_BANK_STATEMENT: {
     docName: "Business Bank Statement for last 6 months",
-    docTemplate: null
+    docTemplate: null,
   },
   DOC_PERSONAL_BANK_STATEMENT: {
     docName: "Personal Bank Statement for last 6 months",
-    docTemplate: null
+    docTemplate: null,
   },
   DOC_SALARY_SLIP: {
     docName: "Salary Slip for last month",
-    docTemplate: null
+    docTemplate: null,
   },
   // specific docs
   DOC_BUSINESS_EXPANSION_PLAN: {
     docName: "Business Expansion Plan",
-    docTemplate: "businessExpanPlan.docx"
+    docTemplate: "businessExpanPlan.docx",
   },
   DOC_NEW_BUSINESS_PLAN: {
     docName: "New Business Plan",
-    docTemplate: "newBussPlan.docx"
+    docTemplate: "newBussPlan.docx",
   },
 
   DOC_APP_FOR_ZIARAT: {
     docName: "Application for Qardan Hasana for Ziarat",
-    docTemplate: "AppZiarat.docx"
+    docTemplate: "AppZiarat.docx",
   },
   DOC_ZIARAT_PAYMENT_CHALLAN: {
     docName: "Copy of Ziarat Payment Challan / Quotation",
-    docTemplate: null
+    docTemplate: null,
   },
   DOC_APP_FOR_FEES: {
     docName: "Application for Qardan Hasana for School / University Fees",
-    docTemplate: "AppFees.docx"
+    docTemplate: "AppFees.docx",
   },
   DOC_FEE_BILL: {
     docName: "Fee Bill",
-    docTemplate: null
+    docTemplate: null,
   },
   DOC_APP_FOR_PROP: {
     docName: "Application for Qardan Hasana for Property Purchase",
-    docTemplate: "AppProperty.docx"
+    docTemplate: "AppProperty.docx",
   },
   DOC_COPY_SALE_DEED: {
     docName: "Copy of Sale Deed for the property",
-    docTemplate: null
+    docTemplate: null,
   },
   DOC_PROPERTY_PICTURES: {
     docName: "Pictures of the property",
-    docTemplate: null
+    docTemplate: null,
   },
   DOC_APP_FOR_CAR_MOTORCYCLE: {
     docName: "Application for Qardan Hasana for Car/Motorcycle",
-    docTemplate: "AppCarMotorcycle.docx"
+    docTemplate: "AppCarMotorcycle.docx",
   },
   DOC_QUOTE_FOR_CAR_MOTORCYCLE: {
     docName: "Quotation for car/motorcycle",
-    docTemplate: null
+    docTemplate: null,
   },
   DOC_APP_JAMAAT_DUES: {
     docName: "Application for Qardan Hasana Jamaat/Wajebaat/FMB Dues",
-    docTemplate: "AppJammatDues.docx"
+    docTemplate: "AppJammatDues.docx",
   },
   DOC_JAMAAT_DUES_SLIP: {
     docName: "Jamaat Dues / FMB / Wajebaat Takhmeen Slip",
-    docTemplate: null
+    docTemplate: null,
   },
   DOC_APP_FOR_HOME_RENOVATION: {
     docName: "Application for Qardan Hasana for Home Renovation",
-    docTemplate: "AppHomeReno.docx"
+    docTemplate: "AppHomeReno.docx",
   },
   DOC_APP_FOR_TRAVEL: {
     docName: "Application for Qardan Hasana for Travel",
-    docTemplate: "AppTravel.docx"
+    docTemplate: "AppTravel.docx",
   },
   DOC_APP_FOR_PERSONAL_WEDDING: {
     docName: "Application for Qardan Hasana for Personal Use / Wedding",
-    docTemplate: "AppPersonalWedding.docx"
-  }
+    docTemplate: "AppPersonalWedding.docx",
+  },
 };
