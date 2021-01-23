@@ -44,7 +44,7 @@ class ShowDocsContainer extends Component {
       showSendEmailModal: false,
       showEmailConfirmationModal: false,
       email: "",
-      emailIsDiabled: true
+      emailIsDiabled: true,
     };
   }
 
@@ -56,19 +56,19 @@ class ShowDocsContainer extends Component {
 
   btnClickGoBack() {
     browserHistory.push({
-      pathname: "/"
+      pathname: "/",
     });
   }
 
   closeSendEmailModal() {
     this.setState({
-      showSendEmailModal: false
+      showSendEmailModal: false,
     });
   }
 
   closeEmailConfirmationModal() {
     this.setState({
-      showEmailConfirmationModal: false
+      showEmailConfirmationModal: false,
     });
   }
 
@@ -76,31 +76,31 @@ class ShowDocsContainer extends Component {
     console.log("sendEmail");
     const data = {
       email: this.state.email,
-      selectedOptions: this.props.selectedOptions
+      selectedOptions: this.props.selectedOptions,
     };
 
     emailService()
       .sendEmailWithDocs({
-        data
+        data,
       })
-      .then(res => {
+      .then((res) => {
         console.log("MAP response");
         console.log("res.status", res.status);
         console.log("res.data", res.data);
       })
-      .catch(e => {
+      .catch((e) => {
         console.log(e);
       });
 
     this.setState({
       showSendEmailModal: false,
-      showEmailConfirmationModal: true
+      showEmailConfirmationModal: true,
     });
   }
 
   btnClickSendList() {
     this.setState({
-      showSendEmailModal: true
+      showSendEmailModal: true,
     });
   }
 
@@ -109,7 +109,7 @@ class ShowDocsContainer extends Component {
     const buttonIsDisbled = !validateEmail(event.target.value);
     this.setState({
       email: event.target.value,
-      emailIsDiabled: buttonIsDisbled
+      emailIsDiabled: buttonIsDisbled,
     });
   }
 
@@ -208,7 +208,7 @@ class ShowDocsContainer extends Component {
           {divArrSpecificDocList}
         </div>
         <strong className={[styles.docsItem].join(" ")}>
-          Send above documents to Adnan Adil Bhai +92-332-3464021 in Tawfeer
+          Send above documents to Shabbir Bhai Dohad +92-300-2182932 in Tawfeer
           Office or email to: ymtm@yousufimohallah.com
         </strong>
         <br />
@@ -247,7 +247,7 @@ class ShowDocsContainer extends Component {
 }
 
 ShowDocsContainer.propTypes = {
-  selectedOptions: PropTypes.object.isRequired
+  selectedOptions: PropTypes.object.isRequired,
   // topics: PropTypes.array.isRequired,
   // typing: PropTypes.func.isRequired,
   // createTopic: PropTypes.func.isRequired,
@@ -259,7 +259,7 @@ ShowDocsContainer.propTypes = {
 
 function mapStateToProps(state) {
   return {
-    selectedOptions: state.selectedOptions
+    selectedOptions: state.selectedOptions,
     // topics: state.topic.topics,
     // newTopic: state.topic.newTopic
   };

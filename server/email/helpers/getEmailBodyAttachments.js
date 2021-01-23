@@ -62,7 +62,7 @@ export default function getEmailBodyAttachments(emailAddress, selectedOptions) {
           process.cwd(),
           "server/email/docs/" + applicationDocsGeneral[i].docTemplate
         ),
-        encoding: "UTF-8"
+        encoding: "UTF-8",
       });
     }
     countAppDoc++;
@@ -87,7 +87,7 @@ export default function getEmailBodyAttachments(emailAddress, selectedOptions) {
           process.cwd(),
           "server/email/docs/" + applicationDocsSpecfic[j].docTemplate
         ),
-        encoding: "UTF-8"
+        encoding: "UTF-8",
       });
     }
     htmlReturnString += "</div>";
@@ -96,10 +96,10 @@ export default function getEmailBodyAttachments(emailAddress, selectedOptions) {
   }
   htmlReturnString += "<br/>";
   htmlReturnString +=
-    "<div>Send above documents to Adnan Adil Bhai +92-332-3464021 in Tawfeer Office or email to: ymtm@yousufimohallah.com</div>";
+    "<div>Send above documents to Shabbir Bhai Dohad +92-300-2182932 in Tawfeer Office or email to: ymtm@yousufimohallah.com</div>";
   htmlReturnString += "<br/>";
   htmlReturnString +=
-    "<strong>For assistance, Contact: Adnan Adil Bhai +92-332-3464021</strong>";
+    "<strong>For assistance, Contact: Shabbir Bhai Dohad +92-300-2182932</strong>";
   htmlReturnString += "<br/>";
   htmlReturnString += "<br/>";
   htmlReturnString += "<strong>Salaam,</strong>";
@@ -108,6 +108,6 @@ export default function getEmailBodyAttachments(emailAddress, selectedOptions) {
 
   return {
     emailBody: htmlReturnString,
-    attachementsArray
+    attachementsArray,
   };
 }
