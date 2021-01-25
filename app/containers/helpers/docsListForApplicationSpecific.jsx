@@ -77,5 +77,8 @@ export default function docsListForApplicationSpecific(applicationDetails) {
     specificDocList.push(DOCS_LIST.DOC_APP_FOR_HOME_RENOVATION);
   }
 
+  // complete checklist
+  specificDocList.push(DOCS_LIST.DOC_COMPLETE_LIST);
+
   return specificDocList;
 }

@@ -134,4 +134,9 @@ export const DOCS_LIST = {
     docName: "Application for Qardan Hasana for Personal Use / Wedding",
     docTemplate: "AppPersonalWedding.docx",
   },
+  DOC_COMPLETE_LIST: {
+    docName:
+      "Full Document Checklist for all differnet types Qardan Hasana Applications",
+    docTemplate: "checklist.pdf",
+  },
 };
