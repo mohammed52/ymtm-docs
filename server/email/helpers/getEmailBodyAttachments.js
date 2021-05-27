@@ -23,25 +23,25 @@ export default function getEmailBodyAttachments(emailAddress, selectedOptions) {
   if (
     selectedOptions.REPEAT_APPLY ===
     DEFAULT_SETTINGS.REPEAT_APPLY.TAG_FIRST_TIME_APPLY
-  ) {
+    ) {
     htmlReturnString += "<div>";
-    htmlReturnString += "<br/>";
-    htmlReturnString +=
-      "<strong>Documents required for your online profile(one time only):</strong>";
+  htmlReturnString += "<br/>";
+  htmlReturnString +=
+  "<strong>Documents required for your online profile(one time only):</strong>";
 
-    for (var k = 0; k < profileDocs.length; k++) {
-      htmlReturnString += "<div>";
-      htmlReturnString += k + 1 + ". " + profileDocs[k].docName;
-      htmlReturnString += "</div>";
-    }
-
+  for (var k = 0; k < profileDocs.length; k++) {
+    htmlReturnString += "<div>";
+    htmlReturnString += k + 1 + ". " + profileDocs[k].docName;
     htmlReturnString += "</div>";
-  } else {
+  }
+
+  htmlReturnString += "</div>";
+} else {
     // htmlReturnString += "<div>Is Repeat Apply</div>"
   }
   htmlReturnString += "<br/>";
   htmlReturnString +=
-    "<strong>Documents required to be submitted with your Application:</strong>";
+  "<strong>Documents required to be submitted with your Application:</strong>";
   let countAppDoc = 1;
   for (var i = 0; i < applicationDocsGeneral.length; i++) {
     htmlReturnString += "<div>";
@@ -51,17 +51,17 @@ export default function getEmailBodyAttachments(emailAddress, selectedOptions) {
       console.log(
         "applicationDocsGeneral[i].docName",
         applicationDocsGeneral[i].docName
-      );
+        );
       console.log(
         "applicationDocsGeneral[i].docTemplate",
         applicationDocsGeneral[i].docTemplate
-      );
+        );
       attachementsArray.push({
         filename: applicationDocsGeneral[i].docTemplate,
         path: path.join(
           process.cwd(),
           "server/email/docs/" + applicationDocsGeneral[i].docTemplate
-        ),
+          ),
         encoding: "UTF-8",
       });
     }
@@ -76,17 +76,17 @@ export default function getEmailBodyAttachments(emailAddress, selectedOptions) {
       console.log(
         "applicationDocsSpecfic[j].docName",
         applicationDocsSpecfic[j].docName
-      );
+        );
       console.log(
         "applicationDocsSpecfic[j].docTemplate",
         applicationDocsSpecfic[j].docTemplate
-      );
+        );
       attachementsArray.push({
         filename: applicationDocsSpecfic[j].docTemplate,
         path: path.join(
           process.cwd(),
           "server/email/docs/" + applicationDocsSpecfic[j].docTemplate
-        ),
+          ),
         encoding: "UTF-8",
       });
     }
@@ -96,10 +96,10 @@ export default function getEmailBodyAttachments(emailAddress, selectedOptions) {
   }
   htmlReturnString += "<br/>";
   htmlReturnString +=
-    "<div>Send above documents to Shabbir Bhai Dohad +92-300-2182932 in Tawfeer Office or email to: ymtm@yousufimohallah.com</div>";
+  "<div>Send above documents to Hussain Bhai Ghani +92-331-3917730 in Tawfeer Office or email to: ymtm@yousufimohallah.com</div>";
   htmlReturnString += "<br/>";
   htmlReturnString +=
-    "<strong>For assistance, Contact: Shabbir Bhai Dohad +92-300-2182932</strong>";
+  "<strong>For assistance, Contact: Hussain Bhai Ghani +92-331-3917730</strong>";
   htmlReturnString += "<br/>";
   htmlReturnString += "<br/>";
   htmlReturnString += "<strong>Salaam,</strong>";

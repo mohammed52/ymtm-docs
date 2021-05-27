@@ -208,7 +208,7 @@ class ShowDocsContainer extends Component {
           {divArrSpecificDocList}
         </div>
         <strong className={[styles.docsItem].join(" ")}>
-          Send above documents to Shabbir Bhai Dohad +92-300-2182932 in Tawfeer
+        Send above documents to Hussain Bhai Ghani +92-331-3917730 in Tawfeer
           Office or email to: ymtm@yousufimohallah.com
         </strong>
         <br />
