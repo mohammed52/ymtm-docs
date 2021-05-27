@@ -29,17 +29,17 @@ export const DOCS_LIST = {
   },
   DOC_GUARANTOR_CNIC_2: {
     docName:
-      "B-03 CNIC Copies and ITS Numbers of 02 Guarantors (Yousufi Mohalla Only)",
+    "B-03 CNIC Copies and ITS Numbers of 02 Guarantors (Yousufi Mohalla Only)",
     docTemplate: null,
   },
   DOC_GUARANTOR_CNIC_3: {
     docName:
-      "B-03 CNIC Copies and ITS Numbers of 03 Guarantors (Yousufi Mohalla Only)",
+    "B-03 CNIC Copies and ITS Numbers of 03 Guarantors (Yousufi Mohalla Only)",
     docTemplate: null,
   },
   DOC_GUARANTOR_CNIC_4: {
     docName:
-      "B-03 CNIC Copies and ITS Numbers of 04 Guarantors (Yousufi Mohalla Only)",
+    "B-03 CNIC Copies and ITS Numbers of 04 Guarantors (Yousufi Mohalla Only)",
     docTemplate: null,
   },
   DOC_PERSONAL_EXPENSES: {
@@ -48,12 +48,12 @@ export const DOCS_LIST = {
   },
   DOC_FINANCIALS: {
     docName:
-      "B-07 Business Financials (sheet # 7,8,9,10 Shk Burhanuddin Jasden 0345-2525252)",
+    "B-07 Business Financials (sheet # 7,8,9,10 Shk Burhanuddin Jasden 0345-2525252)",
     docTemplate: "financials.xlsx",
   },
   DOC_NTN_RETURNS: {
     docName:
-      "B-05 NTN returns for last 2 years (your company accountant) and C-04 Sales Tax returns for last six months (if applicable)",
+    "B-05 NTN returns for last 2 years (your company accountant) and C-04 Sales Tax returns for last six months (if applicable)",
     docTemplate: null,
   },
   DOC_BUSINESS_BANK_STATEMENT: {
@@ -102,6 +102,10 @@ export const DOCS_LIST = {
     docName: "Copy of Sale Deed for the property",
     docTemplate: null,
   },
+  DOC_PROPERTY_PREVIOUS_OWNER: {
+    docName: "F-02 Previous owners title ownership documents",
+    docTemplate: null,
+  },
   DOC_PROPERTY_PICTURES: {
     docName: "Pictures of the property",
     docTemplate: null,
@@ -130,13 +134,17 @@ export const DOCS_LIST = {
     docName: "Application for Qardan Hasana for Travel",
     docTemplate: "AppTravel.docx",
   },
-  DOC_APP_FOR_PERSONAL_WEDDING: {
-    docName: "Application for Qardan Hasana for Personal Use / Wedding",
+  DOC_APP_FOR_PERSONAL_WEDDING_MEDICAL: {
+    docName: "Application for Qardan Hasana for Personal Use / Wedding / Education",
     docTemplate: "AppPersonalWedding.docx",
   },
   DOC_COMPLETE_LIST: {
     docName:
-      "Full Document Checklist for all differnet types Qardan Hasana Applications",
+    "Full Document Checklist for all differnet types Qardan Hasana Applications",
     docTemplate: "checklist.pdf",
+  },
+  DOC_PERSONAL_MEDICAL_HOSPITAL_LETTER: {
+    docName: "E-03 College/Hospital Letter of Admission/Treatment",
+    docTemplate: null,
   },
 };

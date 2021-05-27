@@ -1,8 +1,8 @@
 {
-    "name": "door-quote-automator",
+    "name": "ymtm-docs-generator",
     "version": "1.0.0",
-    "description": "door quote automator",
-    "repository": "https://github.com/mohammed52/door-quote-automator",
+    "description": "ymtm-docs-generator",
+    "repository": "https://github.com/mohammed52/ymtm-docs",
     "main": "index.js",
     "scripts": {
         "sequelize": "node_modules/.bin/sequelize",
