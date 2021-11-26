@@ -58,7 +58,7 @@ export default function docsListForApplicationGeneral(applicationDetails) {
 
   // personal expenses for new business and existing business
   if (
-    applicationDetails.AMOUNT < 7000000 &&
+    applicationDetails.AMOUNT < 1000000 &&
     (applicationDetails.SOURCE_OF_INCOME ===
       DEFAULT_SETTINGS.SOURCE_OF_INCOME.TAG_JOB ||
       applicationDetails.SOURCE_OF_INCOME ===
