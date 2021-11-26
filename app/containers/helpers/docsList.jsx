@@ -53,7 +53,7 @@ export const DOCS_LIST = {
   },
   DOC_NTN_RETURNS: {
     docName:
-    "NTN returns for last 2 years (your company accountant) and C-04 Sales Tax returns for last six months (if applicable)",
+    "NTN returns for last 2 years (your company accountant) and Sales Tax returns for last six months (if applicable)",
     docTemplate: null,
   },
   DOC_BUSINESS_BANK_STATEMENT: {
