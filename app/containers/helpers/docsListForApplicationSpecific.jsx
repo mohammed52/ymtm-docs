@@ -84,7 +84,7 @@ if (
 }
 
   // complete checklist
-  specificDocList.push(DOCS_LIST.DOC_COMPLETE_LIST);
+  // specificDocList.push(DOCS_LIST.DOC_COMPLETE_LIST);
 
   return specificDocList;
 }

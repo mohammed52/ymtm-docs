@@ -4,16 +4,16 @@ import { DEFAULT_SETTINGS } from "./defaultSettings";
 export const DOCS_LIST = {
   // DOCS FOR PROFILE
   DOC_CNIC_COPY: {
-    docName: "B-02 CNIC Copy",
+    docName: "CNIC Copy",
   },
   DOC_PARTNERSHIP_DEED: {
-    docName: "C-02 Partnership Deed of Business (For partnership business)",
+    docName: "Partnership Deed of Business (For partnership business)",
   },
   DOC_ITS_BUSINESS_PARTNERS: {
     docName: "ITS Numbers of All Business Partners (For partnership business)",
   },
   DOC_BUSINESS_NTN: {
-    docName: "B-08 Business NTN Certificate",
+    docName: "Business NTN Certificate",
   },
   DOC_BUSINESS_CHEQUE: {
     docName: "Business Bank Account Cheque Copy",
@@ -24,57 +24,57 @@ export const DOCS_LIST = {
 
   // GENERAL APPLICATION DOCS
   DOC_SAFAI_CHITTI: {
-    docName: "B-01 Safai Chitti",
+    docName: "Safai Chitti",
     docTemplate: null,
   },
   DOC_GUARANTOR_CNIC_2: {
     docName:
-    "B-03 CNIC Copies and ITS Numbers of 02 Guarantors (Yousufi Mohalla Only)",
+    "CNIC Copies and ITS Numbers of 02 Guarantors (Yousufi Mohalla Only)",
     docTemplate: null,
   },
   DOC_GUARANTOR_CNIC_3: {
     docName:
-    "B-03 CNIC Copies and ITS Numbers of 03 Guarantors (Yousufi Mohalla Only)",
+    "CNIC Copies and ITS Numbers of 03 Guarantors (Yousufi Mohalla Only)",
     docTemplate: null,
   },
   DOC_GUARANTOR_CNIC_4: {
     docName:
-    "B-03 CNIC Copies and ITS Numbers of 04 Guarantors (Yousufi Mohalla Only)",
+    "CNIC Copies and ITS Numbers of 04 Guarantors (Yousufi Mohalla Only)",
     docTemplate: null,
   },
   DOC_PERSONAL_EXPENSES: {
-    docName: "B-06 Personal Expenses",
+    docName: "Personal Expenses",
     docTemplate: "personalExpenses.xlsx",
   },
   DOC_FINANCIALS: {
     docName:
-    "B-07 Balance Sheet and Profit and Loss Account for last 02 years",
+    "Balance Sheet and Profit and Loss Account for last 02 years",
     docTemplate: null,
   },
   DOC_NTN_RETURNS: {
     docName:
-    "B-05 NTN returns for last 2 years (your company accountant) and C-04 Sales Tax returns for last six months (if applicable)",
+    "NTN returns for last 2 years (your company accountant) and C-04 Sales Tax returns for last six months (if applicable)",
     docTemplate: null,
   },
   DOC_BUSINESS_BANK_STATEMENT: {
-    docName: "B-09 Business Bank Statement for last 6 months",
+    docName: "Business Bank Statement for last 6 months",
     docTemplate: null,
   },
   DOC_PERSONAL_BANK_STATEMENT: {
-    docName: "B-06 Personal Bank Statement for last 6 months",
+    docName: "Personal Bank Statement for last 6 months",
     docTemplate: null,
   },
   DOC_SALARY_SLIP: {
-    docName: "B-04 Salary Slip for last month",
+    docName: "Salary Slip for last month",
     docTemplate: null,
   },
   // specific docs
   DOC_BUSINESS_EXPANSION_PLAN: {
-    docName: "C-01 Business Expansion Plan",
+    docName: "Business Expansion Plan",
     docTemplate: "businessExpanPlan.docx",
   },
   DOC_NEW_BUSINESS_PLAN: {
-    docName: "C-01 New Business Plan",
+    docName: "New Business Plan",
     docTemplate: "newBussPlan.docx",
   },
 
@@ -103,7 +103,7 @@ export const DOCS_LIST = {
     docTemplate: null,
   },
   DOC_PROPERTY_PREVIOUS_OWNER: {
-    docName: "F-02 Previous owners title ownership documents",
+    docName: "Previous owners title ownership documents",
     docTemplate: null,
   },
   DOC_PROPERTY_PICTURES: {
@@ -144,7 +144,7 @@ export const DOCS_LIST = {
     docTemplate: "checklist.pdf",
   },
   DOC_PERSONAL_MEDICAL_HOSPITAL_LETTER: {
-    docName: "E-03 College/Hospital Letter of Admission/Treatment",
+    docName: "College/Hospital Letter of Admission/Treatment",
     docTemplate: null,
   },
 };
