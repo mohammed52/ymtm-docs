@@ -213,14 +213,14 @@ class ShowDocsContainer extends Component {
         </strong>
         <br />
         <br />
-        <button
+{/*        <button
           className="btn btn-primary"
           type="button"
           onClick={this.btnClickSendList}
         >
           Send This List to my Email
         </button>
-        <br />
+      <br />*/}
         <button
           className="btn btn-default"
           type="button"
