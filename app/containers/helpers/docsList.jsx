@@ -48,8 +48,8 @@ export const DOCS_LIST = {
   },
   DOC_FINANCIALS: {
     docName:
-    "B-07 Business Financials (sheet # 7,8,9,10 Shk Burhanuddin Jasden 0345-2525252)",
-    docTemplate: "financials.xlsx",
+    "B-07 Balance Sheet and Profit and Loss Account for last 02 years",
+    docTemplate: null,
   },
   DOC_NTN_RETURNS: {
     docName:
