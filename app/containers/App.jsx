@@ -29,21 +29,21 @@ var MenuItem = ReactBootstrap.MenuItem;
  * https://github.com/rackt/react-router/blob/latest/docs/Introduction.md
  */
 // const App = ({children}) => {
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      cssHasLoaded: false,
-    };
-    this.handleLoad = this.handleLoad.bind(this);
-  }
+  class App extends Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        cssHasLoaded: false,
+      };
+      this.handleLoad = this.handleLoad.bind(this);
+    }
 
-  componentDidMount() {
-    console.log("AppContainer componentDidMount");
+    componentDidMount() {
+      console.log("AppContainer componentDidMount");
 
-    window.addEventListener("load", this.handleLoad);
-  }
-  handleLoad() {
+      window.addEventListener("load", this.handleLoad);
+    }
+    handleLoad() {
     console.log("handleLoad"); //  $ is available here
     this.setState({
       cssHasLoaded: true,
@@ -59,21 +59,21 @@ class App extends Component {
   render() {
     return (
       <div>
-        {!this.state.cssHasLoaded ? (
-          <div />
+      {!this.state.cssHasLoaded ? (
+        <div />
         ) : (
-          <div className={styles.mainWrapper}>
-            <div className={styles.headerWrapper2}>
-              <div className={styles.headerWrapper}>
-                <img src={ymtm} width="90" height="90" className="img-fluid" />
-                <strong> Helpline: 0300-2182932</strong>
-              </div>
-            </div>
-            {this.props.children}
-          </div>
+        <div className={styles.mainWrapper}>
+        <div className={styles.headerWrapper2}>
+        <div className={styles.headerWrapper}>
+        <img src={ymtm} width="90" height="90" className="img-fluid" />
+        <strong> Helpline: 0331-3917730</strong>
+        </div>
+        </div>
+        {this.props.children}
+        </div>
         )}
-      </div>
-    );
+        </div>
+        );
   }
 }
 
